@@ -1,3 +1,7 @@
+import { SCHOOL, subjectsForGrade, calculateTotal, isPassing } from '@/lib/school-config'
+
+export { SCHOOL, subjectsForGrade, calculateTotal, isPassing }
+
 export type ResultStatus = 'draft' | 'submitted' | 'published'
 
 export type SubjectResult = {

@@ -166,3 +166,39 @@ export const announcement = pgTable('announcement', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 })
+
+export const teacherAssignment = pgTable('teacher_assignment', {
+  id: serial('id').primaryKey(),
+  userId: text('userId').notNull(),
+  teacherId: integer('teacher_id').notNull(),
+  classId: integer('class_id').notNull(),
+  subjectId: integer('subject_id').notNull(),
+  academicYear: varchar('academic_year', { length: 20 }).notNull(),
+  semester: varchar('semester', { length: 20 }).notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+})
+
+export const studentConduct = pgTable('student_conduct', {
+  id: serial('id').primaryKey(),
+  userId: text('userId').notNull(),
+  studentId: integer('student_id').notNull(),
+  academicYear: varchar('academic_year', { length: 20 }).notNull(),
+  semester: varchar('semester', { length: 20 }).notNull(),
+  rating: varchar('rating', { length: 1 }).notNull(),
+  remarks: text('remarks'),
+  recordedBy: text('recorded_by').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+})
+
+export const assessment = pgTable('assessment', {
+  id: serial('id').primaryKey(),
+  userId: text('userId').notNull(),
+  studentResultId: integer('student_result_id').notNull(),
+  assessmentType: varchar('assessment_type', { length: 20 }).notNull(), // mid1, mid2, final, assignment
+  maxScore: integer('max_score').notNull(),
+  score: decimal('score', { precision: 5, scale: 2 }).notNull(),
+  enteredBy: text('entered_by').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+})

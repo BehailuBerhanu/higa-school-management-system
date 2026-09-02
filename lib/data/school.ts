@@ -3,9 +3,11 @@ export const school = {
   shortName: 'Higa Model',
   motto: 'Excellence · Discipline · Character',
   founded: 1998,
-  address: 'Kebele 04, Higa Road, Bahir Dar, Ethiopia',
+  address: 'Higa Model Boarding School',
+  addressUrl: 'https://maps.app.goo.gl/TnWGoweQ38cKpGcm6',
   phone: '+251 58 220 4471',
   email: 'admissions@higamodel.edu.et',
+  principal: 'Temesgen Daniel Mekuria',
   academicYear: '2025/2026',
 }
 
@@ -37,14 +39,14 @@ export const programs = [
     grades: 'Grades 9 – 10',
     blurb:
       'Rigorous preparation for the national examination, with weekly assessment cycles and academic advising.',
-    subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics'],
+    subjects: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'Information Technology', 'Amharic', 'Kembatissa', 'History', 'Geography', 'Economics', 'Citizenship', 'HPE'],
   },
   {
     title: 'Preparatory Programme',
     grades: 'Grades 11 – 12',
     blurb:
-      'Natural and social science streams, university entrance coaching and a dedicated research seminar.',
-    subjects: ['Advanced Maths', 'Economics', 'Technical Drawing', 'History'],
+      'A focused natural-science programme with university entrance coaching, practical learning and a dedicated research seminar.',
+    subjects: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'Information Technology', 'Web Development and Design', 'Agriculture'],
   },
 ]
 
