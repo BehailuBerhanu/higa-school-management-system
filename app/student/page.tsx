@@ -3,7 +3,6 @@ import {
   AwardIcon,
   TrendingUpIcon,
   BookOpenCheckIcon,
-  CalendarCheckIcon,
   ArrowRightIcon,
   PinIcon,
   DownloadIcon,
@@ -77,7 +76,7 @@ export default function StudentDashboardPage() {
         }
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         <StatCard
           label="Semester average"
           value={average.toFixed(1)}
@@ -100,12 +99,6 @@ export default function StudentDashboardPage() {
           value={`${latest.length} / ${latest.length}`}
           hint="All Semester 2 marks released"
           icon={BookOpenCheckIcon}
-        />
-        <StatCard
-          label="Attendance"
-          value="97.4%"
-          hint="182 of 187 teaching days"
-          icon={CalendarCheckIcon}
         />
       </div>
 
