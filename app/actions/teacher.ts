@@ -5,7 +5,6 @@ import { db } from '@/lib/db'
 import {
   teacherProfile,
   studentResult,
-  studentAttendance,
   academicClass,
   studentProfile,
   subject,
@@ -60,45 +59,6 @@ export async function getClassStudents(classId: number) {
     .orderBy(studentProfile.admissionNumber)
 
   return students
-}
-
-export async function recordStudentAttendance(
-  studentId: number,
-  date: Date,
-  present: boolean,
-  remarks?: string
-) {
-  const userId = await getUserId()
-  const teacher = await getTeacherProfile()
-  if (!teacher) throw new Error('Unauthorized')
-
-  const existing = await db
-    .select()
-    .from(studentAttendance)
-    .where(
-      and(
-        eq(studentAttendance.studentId, studentId),
-        eq(studentAttendance.date, date)
-      )
-    )
-    .limit(1)
-
-  if (existing[0]) {
-    await db
-      .update(studentAttendance)
-      .set({ present, remarks })
-      .where(eq(studentAttendance.id, existing[0].id))
-  } else {
-    await db.insert(studentAttendance).values({
-      studentId,
-      date,
-      present,
-      remarks,
-      createdAt: new Date(),
-    })
-  }
-
-  revalidatePath('/teacher/attendance')
 }
 
 export async function submitMarks(
