@@ -146,15 +146,6 @@ export const studentResult = pgTable('student_result', {
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 })
 
-export const studentAttendance = pgTable('student_attendance', {
-  id: serial('id').primaryKey(),
-  studentId: integer('student_id').notNull(),
-  date: timestamp('date').notNull(),
-  present: boolean('present').notNull().default(false),
-  remarks: text('remarks'),
-  createdAt: timestamp('created_at').notNull().defaultNow(),
-})
-
 export const announcement = pgTable('announcement', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
