@@ -68,10 +68,6 @@ export default function TeacherDashboard() {
           </CardHeader>
           <CardContent className="space-y-3">
             <Button className="w-full justify-start" variant="outline">
-              <FileText className="size-4 mr-2" />
-              Record Attendance
-            </Button>
-            <Button className="w-full justify-start" variant="outline">
               <CheckCircle className="size-4 mr-2" />
               Submit Marks
             </Button>
