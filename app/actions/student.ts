@@ -5,7 +5,6 @@ import { db } from '@/lib/db'
 import {
   studentProfile,
   studentResult,
-  studentAttendance,
   announcement,
   subject,
 } from '@/lib/db/schema'
@@ -98,36 +97,4 @@ export async function getStudentAnnouncements() {
     .limit(20)
 
   return announcements
-}
-
-export async function getStudentAttendance(month?: Date) {
-  const userId = await getUserId()
-  const profile = await getStudentProfile()
-  if (!profile) throw new Error('Student profile not found')
-
-  const startOfMonth = month
-    ? new Date(month.getFullYear(), month.getMonth(), 1)
-    : new Date(new Date().getFullYear(), new Date().getMonth(), 1)
-
-  const endOfMonth = new Date(
-    startOfMonth.getFullYear(),
-    startOfMonth.getMonth() + 1,
-    0
-  )
-
-  const attendance = await db
-    .select()
-    .from(studentAttendance)
-    .where(
-      and(
-        eq(studentAttendance.studentId, profile.id),
-        and(
-          eq(studentAttendance.date, startOfMonth),
-          eq(studentAttendance.date, endOfMonth)
-        )
-      )
-    )
-    .orderBy(desc(studentAttendance.date))
-
-  return attendance
 }
