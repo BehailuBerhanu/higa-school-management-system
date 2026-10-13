@@ -11,7 +11,6 @@ const columns = [
       { href: '/about', label: 'About us' },
       { href: '/academics', label: 'Academic programmes' },
       { href: '/campus-life', label: 'Campus life' },
-      { href: '/gallery', label: 'Gallery' },
     ],
   },
   {
