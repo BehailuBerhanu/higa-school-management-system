@@ -24,7 +24,7 @@ import {
 } from '@/components/ui/accordion'
 import { PageHero } from '@/components/public/page-hero'
 import { Reveal, SectionHeading } from '@/components/public/reveal'
-import { gradeBands, programs } from '@/lib/data/school'
+import { programs } from '@/lib/data/school'
 
 export const metadata: Metadata = {
   title: 'Academics',
@@ -167,44 +167,39 @@ export default function AcademicsPage() {
 
           <Reveal delay={120}>
             <SectionHeading
-              eyebrow="Grading scale"
-              title="Letter grade bands, 2025/2026"
-              description="Bands are set by the administration before each academic year and applied uniformly."
+              eyebrow="Grading system"
+              title="Marks and performance bands"
+              description="Student performance is assessed using numerical marks out of 100. The school does not use letter grades."
             />
             <div className="mt-8 overflow-hidden rounded-xl border bg-background">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="w-20">Grade</TableHead>
-                    <TableHead>Range</TableHead>
-                    <TableHead>Descriptor</TableHead>
+                    <TableHead>Mark range</TableHead>
+                    <TableHead>Performance description</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {gradeBands.map((band, i) => {
-                    const upper =
-                      i === 0 ? 100 : (gradeBands[i - 1]?.min ?? 100) - 1
-                    return (
-                      <TableRow key={band.grade}>
-                        <TableCell>
-                          <Badge
-                            variant={
-                              band.grade === 'F' ? 'destructive' : 'secondary'
-                            }
-                            className="font-mono"
-                          >
-                            {band.grade}
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="font-mono text-sm tabular-nums">
-                          {band.min} – {upper}
-                        </TableCell>
-                        <TableCell className="text-sm text-muted-foreground">
-                          {band.description}
-                        </TableCell>
-                      </TableRow>
-                    )
-                  })}
+                  {[
+                    { range: '97+', description: 'Exceptional' },
+                    { range: '93–96', description: 'Outstanding' },
+                    { range: '90–92', description: 'Excellent' },
+                    { range: '87–89', description: 'Very Good' },
+                    { range: '83–86', description: 'Good' },
+                    { range: '80–82', description: 'Solid (Minimum Continuation Threshold)' },
+                    { range: '78–79', description: 'Unsatisfactory (Reassessment Required)' },
+                    { range: '74–77', description: 'Poor (Final Warning Issued)' },
+                    { range: '73 & below', description: 'Dismissal from school' },
+                  ].map((band) => (
+                    <TableRow key={band.range}>
+                      <TableCell className="font-mono font-semibold tabular-nums">
+                        {band.range}
+                      </TableCell>
+                      <TableCell className="text-sm text-muted-foreground">
+                        {band.description}
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
