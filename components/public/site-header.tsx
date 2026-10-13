@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { MenuIcon, PhoneIcon } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
