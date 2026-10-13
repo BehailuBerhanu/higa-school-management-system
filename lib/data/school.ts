@@ -19,20 +19,6 @@ export const stats = [
 
 export const programs = [
   {
-    title: 'Primary School',
-    grades: 'Grades 1 – 6',
-    blurb:
-      'A literacy-and-numeracy-first foundation with small class sizes, daily reading circles and structured play.',
-    subjects: ['English', 'Amharic', 'Mathematics', 'Environmental Science'],
-  },
-  {
-    title: 'Middle School',
-    grades: 'Grades 7 – 8',
-    blurb:
-      'Departmentalised teaching begins, with laboratory science, ICT literacy and guided study halls each evening.',
-    subjects: ['Integrated Science', 'ICT', 'Civics', 'Geography'],
-  },
-  {
     title: 'Secondary School',
     grades: 'Grades 9 – 10',
     blurb:
