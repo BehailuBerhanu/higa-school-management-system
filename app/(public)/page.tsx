@@ -35,7 +35,7 @@ const pillars = [
   {
     icon: SparklesIcon,
     title: 'Academic rigour',
-    body: 'Weekly assessment cycles, subject advisory and supervised evening study from Grade 7 upwards.',
+    body: 'Weekly assessment cycles, subject advisory and supervised evening study from Grade 9 upwards.',
   },
   {
     icon: ShieldCheckIcon,
@@ -411,8 +411,7 @@ export default function HomePage() {
                 Admissions for 2026/2027 are now open
               </h2>
               <p className="mt-3 text-pretty leading-relaxed opacity-85">
-                Entrance assessments for Grades 1, 7 and 9 run across three
-                Saturdays in August. Boarding places are limited.
+                Entrance assessments for Grades 9 and 11 run across Saturdays in August. Boarding places are limited.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
