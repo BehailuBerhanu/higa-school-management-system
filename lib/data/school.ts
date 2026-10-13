@@ -203,13 +203,3 @@ export const testimonials = [
   },
 ]
 
-export const gradeBands = [
-  { grade: 'A+', min: 95, description: 'Outstanding' },
-  { grade: 'A', min: 90, description: 'Excellent' },
-  { grade: 'B+', min: 85, description: 'Very good' },
-  { grade: 'B', min: 80, description: 'Good' },
-  { grade: 'C+', min: 70, description: 'Above average' },
-  { grade: 'C', min: 60, description: 'Satisfactory' },
-  { grade: 'D', min: 50, description: 'Pass' },
-  { grade: 'F', min: 0, description: 'Fail' },
-]
