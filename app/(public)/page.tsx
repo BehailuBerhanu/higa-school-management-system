@@ -25,7 +25,6 @@ import { Reveal, SectionHeading } from '@/components/public/reveal'
 import {
   campusLife,
   events,
-  gallery,
   news,
   programs,
   stats,
@@ -270,36 +269,6 @@ export default function HomePage() {
             </Button>
           </Reveal>
         </div>
-      </section>
-
-      {/* Gallery preview */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <Reveal className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading eyebrow="Gallery" title="Life at Higa Model" />
-          <Button variant="outline" render={<Link href="/gallery" />}>
-            View full gallery
-            <ArrowRightIcon data-icon="inline-end" />
-          </Button>
-        </Reveal>
-
-        <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {gallery.slice(0, 4).map((item, i) => (
-            <Reveal as="li" key={item.src} delay={i * 70}>
-              <figure className="group overflow-hidden rounded-xl border">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={640}
-                  height={480}
-                  className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-56"
-                />
-                <figcaption className="border-t bg-card px-3 py-2.5 text-xs font-medium text-muted-foreground">
-                  {item.caption}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </ul>
       </section>
 
       {/* News + events */}
