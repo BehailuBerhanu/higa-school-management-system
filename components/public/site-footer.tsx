@@ -48,7 +48,7 @@ export function SiteFooter() {
             </div>
             <p className="mt-5 text-sm leading-relaxed opacity-80">
               A boarding institution founded in {school.founded}, educating
-              students from Grade 1 through Grade 12 with rigorous academics
+              students in Grades 9 through 12 with rigorous academics
               and residential care.
             </p>
             <ul className="mt-6 flex flex-col gap-3 text-sm">
