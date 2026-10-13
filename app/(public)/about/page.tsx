@@ -87,7 +87,7 @@ export default function AboutPage() {
         crumb="About"
         eyebrow="Our story"
         title="Twenty-eight years of building a boarding school worth trusting"
-        description="Higa Model began as four classrooms in Bahir Dar. It is now a full Grade 1 to Grade 12 institution with 1,482 students and 96 academic staff."
+        description="Higa Model began as four classrooms in Bahir Dar. It now serves secondary and preparatory students, with 1,482 students and 96 academic staff."
       />
 
       {/* Mission */}
