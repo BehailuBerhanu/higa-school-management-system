@@ -189,17 +189,6 @@ export const events = [
   },
 ]
 
-export const gallery = [
-  { src: '/gallery/campus-quadrangle.png', alt: 'Central campus quadrangle at Higa Model Boarding School', caption: 'Central quadrangle' },
-  { src: '/gallery/science-lab.png', alt: 'Students working in a school chemistry laboratory', caption: 'Chemistry practical' },
-  { src: '/gallery/library-reading-hall.png', alt: 'Students studying in the school library reading hall', caption: 'Reading hall' },
-  { src: '/gallery/classroom-lesson.png', alt: 'A teacher leading a mathematics lesson in a classroom', caption: 'Mathematics lesson' },
-  { src: '/gallery/athletics-track.png', alt: 'Students competing on the school athletics track', caption: 'Inter-house athletics' },
-  { src: '/gallery/boarding-house.png', alt: 'Exterior of a school boarding house residence', caption: 'Abay boarding house' },
-  { src: '/gallery/graduation-ceremony.png', alt: 'Graduating students in gowns at a ceremony', caption: 'Graduation' },
-  { src: '/gallery/robotics-club.png', alt: 'Students assembling an electronics prototype in a club session', caption: 'Robotics club' },
-]
-
 export const faculty = [
   { name: 'Dr. Alemayehu Tesfaye', role: 'Principal', detail: 'PhD Education Leadership · 22 years' },
   { name: 'W/ro Hirut Bekele', role: 'Academic Dean', detail: 'MSc Mathematics · 17 years' },
