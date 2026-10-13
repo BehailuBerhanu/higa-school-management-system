@@ -56,8 +56,6 @@ const steps = [
 ]
 
 const entryPoints = [
-  { grade: 'Grade 1', places: 60, assessment: '8 August 2026', papers: 'Readiness interview' },
-  { grade: 'Grade 7', places: 80, assessment: '15 August 2026', papers: 'English · Mathematics' },
   { grade: 'Grade 9', places: 80, assessment: '22 August 2026', papers: 'English · Mathematics · Science' },
   { grade: 'Grade 11', places: 40, assessment: '22 August 2026', papers: 'Stream-specific papers' },
 ]
@@ -84,7 +82,7 @@ export default function AdmissionsPage() {
       <PageHero
         crumb="Admissions"
         eyebrow="2026 / 2027 intake"
-        title="Admissions are open for Grades 1, 7, 9 and 11"
+        title="Admissions are open for Grades 9 and 11"
         description="Entry is by assessment and interview. Boarding places are limited and offered strictly in order of merit."
       />
 
