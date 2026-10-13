@@ -40,22 +40,6 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="hidden bg-primary text-primary-foreground md:block">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-4 px-6 text-xs">
-          <p className="tracking-wide">
-            Academic year {school.academicYear} · Admissions open for
-            2026/2027
-          </p>
-          <a
-            href={`tel:${school.phone.replace(/\s/g, '')}`}
-            className="flex items-center gap-1.5 font-medium hover:underline"
-          >
-            <PhoneIcon className="size-3.5" aria-hidden="true" />
-            {school.phone}
-          </a>
-        </div>
-      </div>
-
       <div
         className={cn(
           'border-b bg-background/85 backdrop-blur transition-shadow',
