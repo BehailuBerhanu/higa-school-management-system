@@ -23,7 +23,6 @@ const nav = [
   { href: '/admissions', label: 'Admissions' },
   { href: '/campus-life', label: 'Campus Life' },
   { href: '/news', label: 'News' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
 
