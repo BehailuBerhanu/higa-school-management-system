@@ -465,7 +465,7 @@
   .higa-mobile-wire { display: block; }
   .higa-hero-inner { z-index: 1; }
   .higa-hero-copy { z-index: 1; }
-  .hero-emblem-stage { z-index: 1; }
+  .hero-emblem-stage { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .higa-wire-path,
