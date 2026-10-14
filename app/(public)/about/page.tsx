@@ -224,7 +224,7 @@ export default function AboutPage() {
                     {person.role === 'Principal' ? (
                       <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
                         <Image
-                          src="/principal-portrait.png"
+                          src="/principal-portrait.jpg"
                           alt="Temesgen Daniel, Principal of Higa Model Boarding School"
                           fill
                           sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
