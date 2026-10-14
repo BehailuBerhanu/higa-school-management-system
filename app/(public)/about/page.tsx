@@ -218,8 +218,8 @@ export default function AboutPage() {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {faculty.map((person, i) => (
-              <Reveal key={person.name} delay={i * 80}>
-                <Card className="h-full">
+              <Reveal key={person.name} delay={i * 80} className="min-w-0">
+                <Card className="h-full min-w-0 overflow-hidden">
                   <CardContent className="flex min-w-0 flex-col items-stretch gap-3 pt-6">
                     {person.role === 'Principal' ? (
                       <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
