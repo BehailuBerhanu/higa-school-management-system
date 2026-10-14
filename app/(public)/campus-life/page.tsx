@@ -152,7 +152,7 @@ export default function CampusLifePage() {
             />
             <div className="overflow-hidden rounded-2xl border">
               <Image
-                src="/gallery/boarding-house.png"
+                src="/sun-rise.jpeg"
                 alt="A boarding house residence at Higa Model Boarding School in the early evening"
                 width={800}
                 height={600}
