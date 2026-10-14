@@ -113,20 +113,20 @@ export default function HomePage() {
 
       {/* Principal's message */}
       <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[380px_1fr] lg:items-start">
-          <Reveal>
-            <div className="overflow-hidden rounded-2xl border">
+        <div className="mx-auto grid min-w-0 max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start">
+          <Reveal className="min-w-0">
+            <div className="w-full min-w-0 overflow-hidden rounded-2xl border">
               <Image
                 src="/principal-portrait.png"
-                alt="Dr. Alemayehu Tesfaye, Principal of Higa Model Boarding School"
+                alt="Temesgen Daniel, Principal of Higa Model Boarding School"
                 width={760}
                 height={950}
-                className="h-[24rem] w-full object-cover lg:h-[28rem]"
+                className="h-[24rem] w-full object-cover object-[center_28%] lg:h-[28rem]"
               />
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="flex flex-col gap-6">
+          <Reveal delay={120} className="flex min-w-0 flex-col gap-6">
             <SectionHeading
               eyebrow="Principal’s message"
               title="We measure ourselves by what our students become."
@@ -154,15 +154,13 @@ export default function HomePage() {
                 the quadrangle with us. We would be glad to show you the work.
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <Separator className="w-10" />
-              <div>
-                <p className="font-serif text-base font-semibold">
-                  Dr. Alemayehu Tesfaye
+            <div className="flex min-w-0 flex-wrap items-center gap-4">
+              <Separator className="w-10 shrink-0" />
+              <div className="min-w-0">
+                <p className="w-full break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
+                  Temesgen Daniel
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Principal · PhD Education Leadership
-                </p>
+                <p className="text-sm text-muted-foreground">Principal</p>
               </div>
             </div>
             <Button
