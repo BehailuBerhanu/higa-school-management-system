@@ -471,3 +471,80 @@
   .higa-wire-path,
   .higa-wire-nodes { animation: none !important; }
 }
+
+
+/* Mobile: keep the complete hero and highlights marquee within the first screen. */
+@media (max-width: 767px) {
+  .higa-hero {
+    min-height: calc(100svh - 56px);
+    display: flex;
+    flex-direction: column;
+  }
+  .higa-hero-inner {
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    padding: clamp(24px, 5.5svh, 42px) 20px clamp(20px, 4svh, 30px);
+  }
+  .higa-hero-copy {
+    width: 100%;
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+  .higa-hero-eyebrow {
+    padding: 8px 12px;
+    font-size: 9px;
+    letter-spacing: .14em;
+  }
+  .higa-hero-title {
+    margin-top: clamp(18px, 3.2svh, 26px);
+    font-size: clamp(2.25rem, 8.6vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: -.047em;
+  }
+  .higa-hero-description {
+    margin-top: clamp(16px, 2.8svh, 22px);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .higa-hero-copy > .mt-8 {
+    margin-top: clamp(18px, 3.4svh, 28px);
+  }
+  .higa-hero-copy > .mt-6 {
+    margin-top: clamp(14px, 2.5svh, 20px);
+  }
+  .higa-about-button,
+  .higa-portal-button {
+    min-height: 44px;
+    padding-inline: 17px;
+    font-size: 13px;
+  }
+  .higa-marquee {
+    flex: 0 0 auto;
+    margin-top: auto;
+  }
+  .higa-marquee-list {
+    min-height: 48px;
+    gap: 26px;
+    padding-inline: 18px;
+  }
+  .higa-marquee-item {
+    gap: 9px;
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+}
+@media (max-height: 720px) and (max-width: 767px) {
+  .higa-hero-inner { padding-top: 18px; padding-bottom: 16px; }
+  .higa-hero-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .higa-hero-description { margin-top: 12px; line-height: 1.55; }
+  .higa-hero-copy > .mt-8 { margin-top: 15px; }
+  .higa-hero-copy > .mt-6 { margin-top: 11px; }
+  .higa-about-button, .higa-portal-button { min-height: 41px; }
+  .higa-marquee-list { min-height: 44px; }
+}
