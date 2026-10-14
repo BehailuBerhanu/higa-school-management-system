@@ -117,7 +117,7 @@ export default function HomePage() {
           <Reveal className="min-w-0">
             <div className="w-full min-w-0 overflow-hidden rounded-2xl border">
               <Image
-                src="/principal-portrait.png"
+                src="/principal-portrait.jpg"
                 alt="Temesgen Daniel, Principal of Higa Model Boarding School"
                 width={760}
                 height={950}
