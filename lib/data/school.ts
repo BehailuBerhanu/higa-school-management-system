@@ -1,20 +1,19 @@
 export const school = {
   name: 'Higa Model Boarding School',
   shortName: 'Higa Model',
-  motto: 'Excellence · Discipline · Character',
-  founded: 1998,
-  address: 'Kebele 04, Higa Road, Bahir Dar, Ethiopia',
+  motto: 'Academic Excellence · Cultural Identity · Leadership',
+  founded: 2017,
+  address: 'Kembata Zone, South Ethiopia, Ethiopia',
   phone: '+251 58 220 4471',
   email: 'admissions@higamodel.edu.et',
   academicYear: '2025/2026',
 }
 
 export const stats = [
-  { label: 'Enrolled Students', value: 1482, suffix: '' },
-  { label: 'Academic Staff', value: 96, suffix: '' },
-  { label: 'National Exam Pass Rate', value: 99.2, suffix: '%' },
-  { label: 'Years of Excellence', value: 28, suffix: '' },
-  { label: 'National Awards', value: 41, suffix: '' },
+  { label: 'Opened', value: 2017, suffix: '' },
+  { label: 'Grades Served', value: 9, suffix: '–12' },
+  { label: 'Dedicated STEM Center', value: 1, suffix: '' },
+  { label: 'Core Learning Focus', value: 3, suffix: '' },
 ]
 
 export const programs = [
@@ -41,14 +40,14 @@ export const campusLife = [
       'Six residential houses with resident tutors, quiet-hour study supervision and weekend house competitions.',
   },
   {
-    title: 'Science Laboratories',
+    title: 'STEM Center & Practical Learning',
     blurb:
       'Three fully equipped laboratories for physics, chemistry and biology practicals from Grade 7 upwards.',
   },
   {
-    title: 'Library & Reading Hall',
+    title: 'Library & Study Resources',
     blurb:
-      'A 14,000-volume collection, digital catalogue and a 200-seat silent reading hall open until 21:00.',
+      'A strengthened central library stocked with reference books, textbooks, science resources, tables and study furniture with support from WEEMA International and Roots Ethiopia.',
   },
   {
     title: 'Athletics & Sport',
@@ -113,7 +112,7 @@ export const news = [
     category: 'Admissions',
     date: '2026-04-30',
     excerpt:
-      'Entrance assessments for Grades 1, 7 and 9 will be held on three Saturdays in August. Boarding places are limited.',
+      'Entrance assessments for Grades 9 and 11 will be held on three Saturdays in August. Boarding places are limited.',
     body: [
       'Applications for the 2026/2027 academic year are now open for all entry points.',
       'Entrance assessments for Grades 1, 7 and 9 will be held across three Saturdays in August. Applicants sit papers in English and Mathematics, and Grade 9 candidates additionally sit a science paper.',
