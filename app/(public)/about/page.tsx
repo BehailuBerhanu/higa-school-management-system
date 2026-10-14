@@ -220,7 +220,9 @@ export default function AboutPage() {
                             ? '/maths-teacher.jpg'
                             : person.detail.includes('Chemistry')
                               ? '/chemistry-teacher.jpg'
-                              : null
+                              : person.detail.includes('History')
+                                ? '/history-teacher.jpg'
+                                : null
 
                       return portrait ? (
                         <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
