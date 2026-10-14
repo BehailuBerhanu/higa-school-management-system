@@ -163,7 +163,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i * 80}>
-                <Card className="h-full">
+                <Card className="h-full min-w-0 overflow-hidden">
                   <CardHeader>
                     <span className="mb-2 inline-flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       <value.icon className="size-5" aria-hidden="true" />
@@ -220,15 +220,15 @@ export default function AboutPage() {
             {faculty.map((person, i) => (
               <Reveal key={person.name} delay={i * 80}>
                 <Card className="h-full">
-                  <CardContent className="flex flex-col gap-3 pt-6">
+                  <CardContent className="flex min-w-0 flex-col items-stretch gap-3 pt-6">
                     {person.role === 'Principal' ? (
-                      <div className="relative aspect-[4/5] w-full max-w-[18rem] self-center overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
+                      <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
                         <Image
-                          src="/principal-temesgen-daniel.webp"
+                          src="/principal-portrait.png"
                           alt="Temesgen Daniel, Principal of Higa Model Boarding School"
                           fill
                           sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
-                          className="object-cover object-center"
+                          className="object-cover object-[center_28%]"
                         />
                       </div>
                     ) : (
@@ -243,8 +243,8 @@ export default function AboutPage() {
                           .join('')}
                       </span>
                     )}
-                    <div className="min-w-0">
-                      <p className="break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
+                    <div className="w-full min-w-0 text-center">
+                      <p className="mx-auto w-full min-w-0 whitespace-normal break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
                         {person.name}
                       </p>
                       <Badge variant="secondary" className="mt-2">
