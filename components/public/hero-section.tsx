@@ -1,101 +1,111 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRightIcon, GraduationCapIcon } from 'lucide-react'
+import { ArrowRightIcon, GraduationCapIcon, MoveUpRightIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { HeroCanvas } from '@/components/public/hero-canvas'
 import { school } from '@/lib/data/school'
 
 const highlights = [
-  'Grades 1 – 12',
+  'Grades 1–12',
   'Full boarding & day',
   '99.2% pass rate',
   'Founded 1998',
 ]
 
+function SchoolEmblem() {
+  return (
+    <div className="hero-emblem-stage" aria-label="Higa Model Boarding School emblem" role="img">
+      <div className="hero-emblem-halo" />
+      <div className="hero-orbit hero-orbit-one" />
+      <div className="hero-orbit hero-orbit-two" />
+      <div className="hero-orbit hero-orbit-three" />
+      <span className="hero-orbit-dot hero-orbit-dot-one" />
+      <span className="hero-orbit-dot hero-orbit-dot-two" />
+      <span className="hero-orbit-dot hero-orbit-dot-three" />
+      <div className="hero-emblem-disc">
+        <Image
+          src="/logo.png"
+          alt=""
+          width={360}
+          height={360}
+          priority
+          className="hero-emblem-image"
+        />
+      </div>
+      <div className="hero-emblem-caption">
+        <span className="hero-caption-rule" />
+        <span>Knowledge · Character · Service</span>
+        <span className="hero-caption-rule" />
+      </div>
+    </div>
+  )
+}
+
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
-      <Image
-        src="/hero-campus.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center opacity-25"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(105deg,var(--color-primary)_8%,color-mix(in_oklab,var(--color-primary),black_35%)_92%)] opacity-90"
-      />
-      <HeroCanvas />
-
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-14 px-4 py-20 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:py-28">
-        <div className="max-w-2xl">
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em]">
-            <GraduationCapIcon className="size-3.5" aria-hidden="true" />
-            Est. {school.founded} · Bahir Dar
+    <section className="higa-hero relative isolate overflow-hidden">
+      <div className="higa-hero-grain" aria-hidden="true" />
+      <div className="higa-hero-inner relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8 lg:px-10 lg:py-20">
+        <div className="higa-hero-copy relative z-10 max-w-2xl">
+          <p className="higa-hero-eyebrow inline-flex items-center gap-2">
+            <GraduationCapIcon className="size-4" aria-hidden="true" />
+            <span>Est. {school.founded} <span className="hero-eyebrow-divider">/</span> Bahir Dar, Ethiopia</span>
           </p>
 
-          <h1 className="mt-6 text-balance font-serif text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="higa-hero-title mt-6 text-balance font-serif font-semibold tracking-tight">
             A boarding education built on{' '}
-            <span className="text-secondary">excellence</span>, discipline and
-            character.
+            <span className="higa-title-accent">excellence</span>, discipline
+            and character.
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed opacity-85 sm:text-lg">
+          <p className="higa-hero-description mt-6 max-w-xl text-pretty">
             Higa Model Boarding School educates 1,482 students from Grade 1 to
             Grade 12 through rigorous academics, supervised residential study
             and a faculty of ninety-six.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
               size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-              render={<Link href="/admissions" />}
+              className="higa-about-button group"
+              render={<Link href="/about" />}
             >
-              Apply for admission
-              <ArrowRightIcon data-icon="inline-end" />
+              About Higa
+              <MoveUpRightIcon className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" data-icon="inline-end" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              className="higa-portal-button"
               render={<Link href="/login" />}
             >
-              Portal login
+              Portal Login
+              <ArrowRightIcon data-icon="inline-end" />
             </Button>
           </div>
 
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-            {highlights.map((item) => (
-              <li key={item} className="flex items-center gap-2 opacity-85">
-                <span
-                  aria-hidden="true"
-                  className="size-1.5 rounded-full bg-secondary"
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-6 flex items-center gap-3 text-xs tracking-wide text-white/55">
+            <span className="h-px w-8 bg-[var(--higa-gold)]" />
+            Learning with purpose since {school.founded}
+          </p>
         </div>
 
-        <div className="relative w-full max-w-md lg:ml-auto">
-          <div className="overflow-hidden rounded-2xl border border-primary-foreground/20 shadow-2xl">
-            <Image
-              src="/gallery/library-reading-hall.png"
-              alt="Students studying in the Higa Model reading hall"
-              width={720}
-              height={900}
-              className="h-[26rem] w-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-6 -left-4 hidden max-w-[15rem] rounded-xl border border-primary-foreground/20 bg-background p-4 text-foreground shadow-xl sm:block">
-            <p className="font-serif text-2xl font-bold text-primary">212/214</p>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-              Grade 12 candidates placed at public universities in 2026.
-            </p>
-          </div>
+        <div className="relative mx-auto w-full max-w-[35rem] lg:ml-auto">
+          <SchoolEmblem />
+        </div>
+      </div>
+
+      <div className="higa-marquee" aria-label="School highlights">
+        <div className="higa-marquee-track">
+          {[0, 1].map((copy) => (
+            <ul key={copy} className="higa-marquee-list" aria-hidden={copy === 1 ? true : undefined}>
+              {highlights.map((item) => (
+                <li key={item} className="higa-marquee-item">
+                  <span className="higa-marquee-bullet" aria-hidden="true">✦</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
     </section>
