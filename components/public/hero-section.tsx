@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button'
 import { school } from '@/lib/data/school'
 
 const highlights = [
-  'Grades 1–12',
+  'Grades 9–12',
   'Full boarding & day',
-  '99.2% pass rate',
-  'Founded 1998',
+  'Selective regional admission',
+  'Established 2017',
 ]
 
 function SchoolEmblem() {
@@ -94,7 +94,7 @@ export function HeroSection() {
         <div className="higa-hero-copy relative z-10 max-w-2xl">
           <p className="higa-hero-eyebrow inline-flex items-center gap-2">
             <GraduationCapIcon className="size-4" aria-hidden="true" />
-            <span>Est. {school.founded} <span className="hero-eyebrow-divider">/</span> Bahir Dar, Ethiopia</span>
+            <span>Est. {school.founded} <span className="hero-eyebrow-divider">/</span> Kembata Zone, Ethiopia</span>
           </p>
 
           <h1 className="higa-hero-title mt-6 text-balance font-serif font-semibold tracking-tight">
@@ -104,8 +104,7 @@ export function HeroSection() {
           </h1>
 
           <p className="higa-hero-description mt-6 max-w-xl text-pretty">
-            Higa Model Boarding School educates 1,482 students from Grade 1 to
-            Grade 12 through rigorous academics, supervised residential study
+            Higa Model Boarding School serves selected high-achieving students in Grades 9–12 from across Kembata Zone, combining rigorous academics with boarding support
             and a faculty of ninety-six.
           </p>
 
