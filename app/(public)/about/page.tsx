@@ -21,7 +21,7 @@ import { faculty, school } from '@/lib/data/school'
 export const metadata: Metadata = {
   title: 'About the school',
   description:
-    'The history, mission, values and leadership of Higa Model Boarding School, a selective secondary boarding school in Kembata Zone, Ethiopia, established in 2017.',
+    'The history, mission, values and leadership of Higa Model Boarding School, a selective secondary boarding school in Kembata Zone, Ethiopia, established in 2009 EC (2017 GC).',
 }
 
 const values = [
@@ -49,12 +49,12 @@ const values = [
 
 const milestones = [
   {
-    year: '2017',
+    year: '2009 EC / 2017 GC',
     title: 'Higa Model opens',
     body: 'The school launches on a campus that previously served as a university property, through collaboration among the District Education Department, local community members and Gogota Care.',
   },
   {
-    year: '2017',
+    year: '2009 EC / 2017 GC',
     title: 'Community partnership',
     body: 'The school begins its work as a regional boarding school through collaboration between education leaders, the local community and Gogota Care.',
   },
@@ -87,7 +87,7 @@ export default function AboutPage() {
         crumb="About"
         eyebrow="Our story"
         title="A regional school with an ambitious vision"
-        description="Established in 2017, Higa Model Boarding School serves high-achieving students from across Kembata Zone, pairing academic ambition with cultural identity and opportunity."
+        description="Established in 2009 EC (2017 GC), Higa Model Boarding School serves high-achieving students from across Kembata Zone, pairing academic ambition with cultural identity and opportunity."
       />
 
       {/* Mission */}
