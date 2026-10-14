@@ -420,131 +420,82 @@
 }
 
 
-/* Mobile-only animated golden wire trails for the homepage hero.
-   Desktop keeps the existing emblem/orbit composition unchanged. */
+/* Mobile-only glowing torch wire background; desktop hero remains unchanged. */
 .higa-mobile-wire {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: .72;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 17%, #000 82%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 17%, #000 82%, transparent 100%);
+  display:none;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:.88;
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 93%, transparent 100%);
+  mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 93%, transparent 100%);
 }
-.higa-mobile-wire svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+.higa-mobile-wire svg { display:block; width:100%; height:100%; }
+.higa-wire-orbit {
+  fill:none;
+  stroke:#cda444;
+  stroke-width:.72;
+  stroke-linecap:round;
+  stroke-dasharray:1 0;
+  transform-box:fill-box;
+  transform-origin:center;
+  filter:drop-shadow(0 0 3px rgb(255 211 91 / 36%));
 }
-.higa-wire-path {
-  fill: none;
-  stroke: #e9bd55;
-  stroke-width: 1.05;
-  stroke-linecap: round;
-  stroke-dasharray: 5 13 2 17;
-  filter: drop-shadow(0 0 4px rgb(255 207 91 / 58%));
-  animation: higa-wire-flow 13s linear infinite;
+.higa-wire-orbit-one { animation:higa-orbit-turn 36s linear infinite; }
+.higa-wire-orbit-two { animation:higa-orbit-turn-reverse 44s linear infinite; }
+.higa-wire-orbit-three { stroke-width:.8; opacity:.8; animation:higa-orbit-drift-three 22s ease-in-out infinite alternate; }
+.higa-wire-orbit-four { stroke-width:.62; opacity:.7; stroke-dasharray:2 5 1 9; animation:higa-orbit-drift-four 27s ease-in-out infinite alternate; }
+.higa-wire-bloom { fill:url(#higa-wire-glow); filter:url(#higa-wire-blur); animation:higa-wire-pulse 3.8s ease-in-out infinite; }
+.higa-wire-point { fill:#fff0a2; filter:drop-shadow(0 0 4px rgb(255 225 127 / 90%)); }
+.higa-torch-ring {
+  fill:none;
+  stroke:#c9a347;
+  stroke-width:.75;
+  stroke-dasharray:2 5;
+  opacity:.75;
 }
-.higa-wire-path-b { stroke: #f6dda0; stroke-width: .8; animation-duration: 17s; animation-direction: reverse; }
-.higa-wire-path-c { stroke-width: .65; opacity: .7; animation-duration: 21s; }
-.higa-wire-path-d { stroke-width: .9; opacity: .8; animation-duration: 16s; animation-direction: reverse; }
-.higa-wire-nodes {
-  transform-origin: center;
-  animation: higa-wire-pulse 4.5s ease-in-out infinite;
+.higa-torch-rays {
+  fill:none;
+  stroke:#d8b24e;
+  stroke-width:.75;
+  stroke-linecap:round;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:higa-rays-turn 48s linear infinite;
 }
-@keyframes higa-wire-flow {
-  to { stroke-dashoffset: -148; }
+.higa-torch-flame {
+  fill:none;
+  stroke:#ffdf78;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 4px rgb(255 216 111 / 75%));
+  animation:higa-flame-flicker 2.4s ease-in-out infinite alternate;
 }
-@keyframes higa-wire-pulse {
-  0%, 100% { opacity: .65; }
-  50% { opacity: 1; }
+.higa-torch-bowl,.higa-torch-stem {
+  fill:none;
+  stroke:#d9b34f;
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 3px rgb(255 216 111 / 55%));
 }
-@media (max-width: 767px) {
-  .higa-mobile-wire { display: block; }
-  .higa-hero-inner { z-index: 1; }
-  .higa-hero-copy { z-index: 1; }
-  .hero-emblem-stage { display: none !important; }
+@keyframes higa-orbit-drift-three { to { transform:translate(8px,-6px) rotate(4deg); } }
+@keyframes higa-orbit-drift-four { to { transform:translate(-7px,5px) rotate(-4deg); } }
+@keyframes higa-rays-turn { to { transform:rotate(360deg); } }
+@keyframes higa-flame-flicker {
+  0% { opacity:.78; transform:scale(.98,1); filter:drop-shadow(0 0 3px rgb(255 216 111 / 50%)); }
+  45% { opacity:1; transform:scale(1.04,1.06) skewX(-1deg); filter:drop-shadow(0 0 9px rgb(255 216 111 / 95%)); }
+  100% { opacity:.88; transform:scale(.99,1.02) skewX(1deg); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .higa-wire-path,
-  .higa-wire-nodes { animation: none !important; }
+@media (max-width:767px) {
+  .higa-mobile-wire { display:block; }
+  .higa-hero-inner { position:relative; z-index:1; }
+  .higa-hero-copy { position:relative; z-index:1; }
+  .hero-emblem-stage { display:none !important; }
 }
-
-
-/* Mobile: keep the complete hero and highlights marquee within the first screen. */
-@media (max-width: 767px) {
-  .higa-hero {
-    min-height: calc(100svh - 56px);
-    display: flex;
-    flex-direction: column;
-  }
-  .higa-hero-inner {
-    box-sizing: border-box;
-    flex: 1 0 auto;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 0;
-    padding: clamp(24px, 5.5svh, 42px) 20px clamp(20px, 4svh, 30px);
-  }
-  .higa-hero-copy {
-    width: 100%;
-    max-width: 36rem;
-    margin-inline: auto;
-  }
-  .higa-hero-eyebrow {
-    padding: 8px 12px;
-    font-size: 9px;
-    letter-spacing: .14em;
-  }
-  .higa-hero-title {
-    margin-top: clamp(18px, 3.2svh, 26px);
-    font-size: clamp(2.25rem, 8.6vw, 3.1rem);
-    line-height: 1.02;
-    letter-spacing: -.047em;
-  }
-  .higa-hero-description {
-    margin-top: clamp(16px, 2.8svh, 22px);
-    font-size: 14px;
-    line-height: 1.65;
-  }
-  .higa-hero-copy > .mt-8 {
-    margin-top: clamp(18px, 3.4svh, 28px);
-  }
-  .higa-hero-copy > .mt-6 {
-    margin-top: clamp(14px, 2.5svh, 20px);
-  }
-  .higa-about-button,
-  .higa-portal-button {
-    min-height: 44px;
-    padding-inline: 17px;
-    font-size: 13px;
-  }
-  .higa-marquee {
-    flex: 0 0 auto;
-    margin-top: auto;
-  }
-  .higa-marquee-list {
-    min-height: 48px;
-    gap: 26px;
-    padding-inline: 18px;
-  }
-  .higa-marquee-item {
-    gap: 9px;
-    font-size: 9px;
-    letter-spacing: .1em;
-  }
-}
-@media (max-height: 720px) and (max-width: 767px) {
-  .higa-hero-inner { padding-top: 18px; padding-bottom: 16px; }
-  .higa-hero-title { font-size: clamp(2rem, 8vw, 2.6rem); }
-  .higa-hero-description { margin-top: 12px; line-height: 1.55; }
-  .higa-hero-copy > .mt-8 { margin-top: 15px; }
-  .higa-hero-copy > .mt-6 { margin-top: 11px; }
-  .higa-about-button, .higa-portal-button { min-height: 41px; }
-  .higa-marquee-list { min-height: 44px; }
+@media (prefers-reduced-motion:reduce) {
+  .higa-wire-orbit,.higa-wire-bloom,.higa-torch-rays,.higa-torch-flame { animation:none !important; }
 }
