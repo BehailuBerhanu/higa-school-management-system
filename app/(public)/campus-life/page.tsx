@@ -231,68 +231,7 @@ export default function CampusLifePage() {
         </div>
       </section>
 
-      <section className="border-b bg-muted/40 py-20 sm:py-24">
-        <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
-          <Reveal className="flex flex-col gap-8">
-            <SectionHeading
-              eyebrow="Clubs & Societies"
-              title="Twelve student-led societies"
-              description="Every student joins at least one society. Each is run by an elected student committee with a faculty patron."
-              align="left"
-            />
-            <ul className="flex flex-wrap gap-2">
-              {clubs.map((club) => (
-                <li key={club}>
-                  <Badge variant="outline" className="px-3 py-1.5 text-sm">
-                    {club}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-            <div className="overflow-hidden rounded-2xl border">
-              <Image
-                src="/gallery/robotics-club.png"
-                alt="Students assembling an electronics prototype in the robotics club"
-                width={800}
-                height={520}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
 
-          <Reveal delay={120} className="flex flex-col gap-6">
-            <SectionHeading
-              eyebrow="Pastoral Care"
-              title="Someone is always responsible"
-              description="Boarding only works when supervision is named and accountable. Here is how care is structured."
-              align="left"
-            />
-            <ul className="flex flex-col gap-4">
-              {pastoral.map((item, index) => (
-                <li key={item.title}>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-start gap-4">
-                        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-sm font-medium text-primary">
-                          {index + 1}
-                        </span>
-                        <div className="flex flex-col gap-1.5">
-                          <CardTitle className="text-base">
-                            {item.title}
-                          </CardTitle>
-                          <CardDescription className="leading-relaxed">
-                            {item.body}
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
 
       <section className="bg-primary py-20 text-primary-foreground sm:py-24">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-6 text-center">
