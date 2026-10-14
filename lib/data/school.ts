@@ -2,7 +2,7 @@ export const school = {
   name: 'Higa Model Boarding School',
   shortName: 'Higa Model',
   motto: 'Academic Excellence · Cultural Identity · Leadership',
-  founded: 2017,
+  founded: '2017 GC / 2009 EC',
   address: 'Kembata Zone, South Ethiopia, Ethiopia',
   phone: '+251 58 220 4471',
   email: 'admissions@higamodel.edu.et',
