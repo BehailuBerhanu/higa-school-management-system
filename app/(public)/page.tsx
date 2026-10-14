@@ -357,38 +357,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <Reveal className="flex flex-col items-start gap-6 rounded-2xl bg-primary px-6 py-12 text-primary-foreground sm:px-12 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
-              <h2 className="text-balance text-3xl font-bold tracking-tight">
-                Admissions for 2026/2027 are now open
-              </h2>
-              <p className="mt-3 text-pretty leading-relaxed opacity-85">
-                Entrance assessments for Grades 9 and 11 run across Saturdays in August. Boarding places are limited.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                render={<Link href="/admissions" />}
-              >
-                Start an application
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                render={<Link href="/contact" />}
-              >
-                Book a visit
-              </Button>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+
     </>
   )
 }
