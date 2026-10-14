@@ -517,3 +517,19 @@
   .higa-hero-copy > .mt-6 { margin-top: 9px; }
   .higa-marquee-list { min-height: 42px; }
 }
+
+
+/* Use the user's uploaded background image on mobile only. */
+@media (max-width: 767px) {
+  .higa-hero {
+    background-color: #073b2a;
+    background-image: url("/mobile-hero-background.jpe");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  /* Use the actual supplied image instead of the earlier SVG recreation. */
+  .higa-mobile-wire {
+    display: none !important;
+  }
+}
