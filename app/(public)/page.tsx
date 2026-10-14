@@ -226,52 +226,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Campus life */}
-      <section className="border-y bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <Reveal>
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
-              <span aria-hidden="true" className="h-px w-6 bg-secondary" />
-              Campus life
-            </p>
-            <h2 className="mt-3 max-w-3xl text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-              A campus that stays awake with its students
-            </h2>
-            <p className="mt-3 max-w-2xl text-pretty leading-relaxed opacity-80">
-              Boarding is not simply accommodation. It is the structure that
-              makes our academic results possible.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {campusLife.map((item, i) => (
-              <Reveal
-                key={item.title}
-                delay={i * 70}
-                className="border-t border-primary-foreground/20 pt-5"
-              >
-                <h3 className="font-serif text-lg font-semibold text-secondary">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed opacity-80">
-                  {item.blurb}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={140} className="mt-12">
-            <Button
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-              render={<Link href="/campus-life" />}
-            >
-              Explore campus life
-              <ArrowRightIcon data-icon="inline-end" />
-            </Button>
-          </Reveal>
-        </div>
-      </section>
-
       {/* News + events */}
       <section className="border-t bg-card">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_340px]">
