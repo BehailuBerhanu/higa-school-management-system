@@ -48,49 +48,50 @@ export function HeroSection() {
         <svg viewBox="0 0 390 760" preserveAspectRatio="xMidYMid slice">
           <defs>
             <radialGradient id="higa-wire-glow">
-              <stop offset="0" stopColor="#fff1a8" stopOpacity="1" />
-              <stop offset=".28" stopColor="#ffd45e" stopOpacity=".72" />
+              <stop offset="0" stopColor="#fff2ad" stopOpacity="1" />
+              <stop offset=".24" stopColor="#ffd45e" stopOpacity=".8" />
               <stop offset="1" stopColor="#ffd45e" stopOpacity="0" />
             </radialGradient>
-            <filter id="higa-wire-blur" x="-100%" y="-100%" width="300%" height="300%">
+            <radialGradient id="higa-torch-aura">
+              <stop offset="0" stopColor="#f2c44f" stopOpacity=".2" />
+              <stop offset="1" stopColor="#f2c44f" stopOpacity="0" />
+            </radialGradient>
+            <filter id="higa-wire-blur" x="-150%" y="-150%" width="400%" height="400%">
               <feGaussianBlur stdDeviation="4" />
             </filter>
-            <linearGradient id="higa-torch-line" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#fff0a2" />
-              <stop offset="1" stopColor="#c28c24" />
-            </linearGradient>
+            <filter id="higa-torch-glow" x="-150%" y="-150%" width="400%" height="400%">
+              <feGaussianBlur stdDeviation="2.5" />
+            </filter>
           </defs>
+          <circle cx="278" cy="225" r="112" fill="url(#higa-torch-aura)" />
           <g className="higa-wire-orbit higa-wire-orbit-one">
-            <ellipse cx="255" cy="235" rx="145" ry="88" />
+            <path d="M-65 420 C 8 315, 104 188, 212 150 C 302 118, 394 160, 416 245 C 438 331, 384 399, 315 440 C 249 480, 172 465, 151 402 C 128 335, 182 270, 244 277 C 307 284, 339 346, 309 398" />
+            <circle cx="212" cy="150" r="14" className="higa-wire-bloom" />
+            <circle cx="212" cy="150" r="2.2" className="higa-wire-point" />
+            <circle cx="416" cy="245" r="13" className="higa-wire-bloom" />
+            <circle cx="416" cy="245" r="2.1" className="higa-wire-point" />
           </g>
           <g className="higa-wire-orbit higa-wire-orbit-two">
-            <ellipse cx="255" cy="235" rx="100" ry="188" />
+            <path d="M-48 570 C 28 518, 54 435, 105 372 C 158 306, 248 308, 306 369 C 361 428, 344 504, 291 543 C 239 582, 162 570, 133 516 C 101 457, 145 400, 201 409 C 246 416, 266 455, 244 489" />
+            <circle cx="105" cy="372" r="13" className="higa-wire-bloom" />
+            <circle cx="105" cy="372" r="2" className="higa-wire-point" />
+            <circle cx="291" cy="543" r="13" className="higa-wire-bloom" />
+            <circle cx="291" cy="543" r="2" className="higa-wire-point" />
           </g>
           <g className="higa-wire-orbit higa-wire-orbit-three">
-            <path d="M-70 420 C 35 340 105 365 150 460 S 265 595 355 490 S 410 300 480 280" />
+            <path d="M-35 690 C 37 650, 74 588, 95 533 C 117 475, 166 455, 213 483 C 268 516, 305 590, 390 622" />
+            <circle cx="95" cy="533" r="14" className="higa-wire-bloom" />
+            <circle cx="95" cy="533" r="2.2" className="higa-wire-point" />
           </g>
           <g className="higa-wire-orbit higa-wire-orbit-four">
-            <path d="M-60 590 C 70 500 60 390 155 350 S 315 420 405 320 S 350 120 455 55" />
-          </g>
-          <g className="higa-wire-lights">
-            <circle cx="110" cy="175" r="15" fill="url(#higa-wire-glow)" filter="url(#higa-wire-blur)" />
-            <circle cx="110" cy="175" r="2.4" fill="#fff0a2" />
-            <circle cx="389" cy="236" r="14" fill="url(#higa-wire-glow)" filter="url(#higa-wire-blur)" />
-            <circle cx="389" cy="236" r="2.4" fill="#fff0a2" />
-            <circle cx="300" cy="395" r="13" fill="url(#higa-wire-glow)" filter="url(#higa-wire-blur)" />
-            <circle cx="300" cy="395" r="2.2" fill="#fff0a2" />
-            <circle cx="75" cy="515" r="14" fill="url(#higa-wire-glow)" filter="url(#higa-wire-blur)" />
-            <circle cx="75" cy="515" r="2.4" fill="#fff0a2" />
+            <path d="M-35 235 C 50 310, 65 390, 30 465 S 20 605, 118 653 S 276 694, 390 760" />
           </g>
           <g className="higa-torch-art">
-            <circle cx="255" cy="235" r="72" className="higa-torch-ring" />
-            <g className="higa-torch-rays">
-              <path d="M255 144 V162 M255 308 V326 M164 235 H182 M328 235 H346 M191 171 L203 184 M307 286 L320 299 M319 171 L307 184 M203 286 L190 299" />
-            </g>
-            <path className="higa-torch-flame higa-torch-flame-outer" d="M255 270 C242 250 226 239 238 216 C241 207 250 201 251 185 C267 205 269 214 266 225 C280 216 280 202 278 195 C299 225 288 250 270 270 Z" />
-            <path className="higa-torch-flame higa-torch-flame-inner" d="M255 267 C249 253 246 246 253 234 C259 243 265 248 262 258 Z" />
-            <path className="higa-torch-bowl" d="M230 273 H280 L274 283 H236 Z M237 289 H273 L268 298 H242 Z" />
-            <path className="higa-torch-stem" d="M243 299 L249 355 H261 L267 299 M248 355 L245 370 H265 L262 355" />
+            <circle cx="278" cy="225" r="69" className="higa-torch-ring" />
+            <path className="higa-torch-rays" d="M278 132V150 M278 300V318 M185 225H203 M353 225H371 M212 159L225 173 M331 277L344 291 M344 159L331 173 M225 277L212 291 M237 141L244 160 M312 290L319 309 M319 141L312 160 M244 290L237 309" />
+            <path className="higa-torch-flame" d="M278 263 C264 244 252 230 262 208 C267 197 275 190 276 174 C294 197 302 211 294 230 C291 239 285 247 278 251 C288 236 278 224 277 211 C267 225 269 239 278 263Z" />
+            <path className="higa-torch-bowl" d="M252 265H304L299 275H257Z M260 281H296L292 289H264Z" />
+            <path className="higa-torch-stem" d="M265 290L272 352H284L291 290 M272 352L268 365H288L284 352" />
           </g>
         </svg>
       </div>
