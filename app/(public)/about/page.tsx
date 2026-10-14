@@ -224,7 +224,7 @@ export default function AboutPage() {
                     {person.role === 'Principal' ? (
                       <div className="relative aspect-[4/5] w-full max-w-[18rem] self-center overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
                         <Image
-                          src="/principal-temesgen-daniel.jpg"
+                          src="/principal-temesgen-daniel.webp"
                           alt="Temesgen Daniel, Principal of Higa Model Boarding School"
                           fill
                           sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
@@ -237,7 +237,7 @@ export default function AboutPage() {
                         className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
                       >
                         {person.name
-                          .replace(/^(Dr\\.|W\\/ro|Ato)\\s/, '')
+                          .replace(/^(Dr\.|W\/ro|Ato)\s/, '')
                           .split(' ')
                           .map((n) => n[0])
                           .join('')}
