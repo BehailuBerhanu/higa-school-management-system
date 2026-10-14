@@ -3,9 +3,10 @@ import Link from 'next/link'
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
+  FlaskConicalIcon,
+  BookOpenIcon,
   QuoteIcon,
   ShieldCheckIcon,
-  SparklesIcon,
   UsersIcon,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -33,19 +34,19 @@ import {
 
 const pillars = [
   {
-    icon: SparklesIcon,
-    title: 'Academic rigour',
-    body: 'Weekly assessment cycles, subject advisory and supervised evening study from Grade 9 upwards.',
+    icon: FlaskConicalIcon,
+    title: 'STEM Beyond the Textbook',
+    body: 'Students put theory into practice in three science laboratories, while the Higa robotics team builds and tests real-world engineering projects.',
   },
   {
     icon: ShieldCheckIcon,
-    title: 'Residential care',
-    body: 'Six boarding houses with resident tutors, an on-campus clinic and a full counselling service.',
+    title: 'A 99.2% National Exam Pass Rate',
+    body: 'A strong record built on weekly assessments, subject advising and supervised evening study — helping students approach national examinations with confidence.',
   },
   {
-    icon: UsersIcon,
-    title: 'Character formation',
-    body: 'House competitions, student-led societies and a service requirement in every senior year.',
+    icon: BookOpenIcon,
+    title: 'Clubs, Creativity & Leadership',
+    body: 'From debate and robotics to drama, environmental projects and the student journal, learners have space to explore interests and lead alongside their studies.',
   },
 ]
 
@@ -86,9 +87,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Higa Model"
-            title="Three commitments that shape every school day"
-            description="Everything from the timetable to the boarding roster is designed around these principles."
+            eyebrow="Why Higa Model Boarding School"
+            title="Ambitious academics. Real-world discovery. Confident leaders."
+            description="From hands-on science to a strong national exam record and student-led clubs, Higa gives learners room to achieve and grow."
           />
         </Reveal>
 
