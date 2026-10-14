@@ -138,21 +138,23 @@ export default function HomePage() {
             />
             <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
               <p>
-                When this school opened its gates in 1998 we had four
-                classrooms and thirty-one students. What we had in abundance was
-                a conviction that a boarding education, done carefully, can
-                change the trajectory of a family.
+                Higa Model Boarding School was established in 2017 through
+                collaboration among the District Education Department, local
+                community members and Gogota Care. From the beginning, its
+                purpose has been to widen opportunity for talented students
+                from across Kembata Zone.
               </p>
               <p>
-                Twenty-eight years later that conviction is unchanged. Our
-                teachers still mark every script. Our house tutors still sit
-                with students through evening study. And every result published
-                on this platform is calculated, verified and released by the
-                registrar — never estimated.
+                We believe students from rural and regional communities can
+                reach high academic standards without giving up their cultural
+                identity. Our national curriculum is strengthened by practical
+                learning through the school’s dedicated STEM Center and learning
+                resources built with partner support.
               </p>
               <p>
-                If you are considering Higa Model for your child, come and walk
-                the quadrangle with us. We would be glad to show you the work.
+                We welcome families and community partners who share our
+                ambition for young people to connect local knowledge with wider
+                educational and career opportunities.
               </p>
             </div>
             <div className="flex min-w-0 flex-wrap items-center gap-4">
