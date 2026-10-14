@@ -48,22 +48,17 @@ export function HeroSection() {
         <svg viewBox="0 0 390 760" preserveAspectRatio="xMidYMid slice">
           <defs>
             <radialGradient id="higa-wire-glow">
-              <stop offset="0" stopColor="#fff2ad" stopOpacity="1" />
-              <stop offset=".24" stopColor="#ffd45e" stopOpacity=".8" />
+              <stop offset="0" stopColor="#e8c96e" stopOpacity=".38" />
+              <stop offset=".24" stopColor="#c6a34d" stopOpacity=".22" />
               <stop offset="1" stopColor="#ffd45e" stopOpacity="0" />
             </radialGradient>
             <radialGradient id="higa-torch-aura">
-              <stop offset="0" stopColor="#f2c44f" stopOpacity=".2" />
+              <stop offset="0" stopColor="#c4a04b" stopOpacity=".08" />
               <stop offset="1" stopColor="#f2c44f" stopOpacity="0" />
             </radialGradient>
-            <filter id="higa-wire-blur" x="-150%" y="-150%" width="400%" height="400%">
-              <feGaussianBlur stdDeviation="4" />
-            </filter>
-            <filter id="higa-torch-glow" x="-150%" y="-150%" width="400%" height="400%">
-              <feGaussianBlur stdDeviation="2.5" />
-            </filter>
+            
           </defs>
-          <circle cx="278" cy="225" r="112" fill="url(#higa-torch-aura)" />
+          
           <g className="higa-wire-orbit higa-wire-orbit-one">
             <path d="M-65 420 C 8 315, 104 188, 212 150 C 302 118, 394 160, 416 245 C 438 331, 384 399, 315 440 C 249 480, 172 465, 151 402 C 128 335, 182 270, 244 277 C 307 284, 339 346, 309 398" />
             <circle cx="212" cy="150" r="14" className="higa-wire-bloom" />
