@@ -221,18 +221,30 @@ export default function AboutPage() {
               <Reveal key={person.name} delay={i * 80}>
                 <Card className="h-full">
                   <CardContent className="flex flex-col gap-3 pt-6">
-                    <span
-                      aria-hidden="true"
-                      className="flex size-14 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
-                    >
-                      {person.name
-                        .replace(/^(Dr\.|W\/ro|Ato)\s/, '')
-                        .split(' ')
-                        .map((n) => n[0])
-                        .join('')}
-                    </span>
-                    <div>
-                      <p className="font-serif text-base font-semibold">
+                    {person.role === 'Principal' ? (
+                      <div className="relative aspect-[4/5] w-full max-w-[18rem] self-center overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
+                        <Image
+                          src="/principal-temesgen-daniel.jpg"
+                          alt="Temesgen Daniel, Principal of Higa Model Boarding School"
+                          fill
+                          sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
+                          className="object-cover object-center"
+                        />
+                      </div>
+                    ) : (
+                      <span
+                        aria-hidden="true"
+                        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
+                      >
+                        {person.name
+                          .replace(/^(Dr\\.|W\\/ro|Ato)\\s/, '')
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </span>
+                    )}
+                    <div className="min-w-0">
+                      <p className="break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
                         {person.name}
                       </p>
                       <Badge variant="secondary" className="mt-2">
