@@ -29,7 +29,7 @@ import { programs } from '@/lib/data/school'
 export const metadata: Metadata = {
   title: 'Academics',
   description:
-    'Academic programmes, curriculum, assessment structure and grading scale at Higa Model Boarding School, Grades 1 to 12.',
+    'Academic programmes, curriculum, assessment structure and grading scale at Higa Model Boarding School, Grades 9 to 12.',
 }
 
 const assessment = [
@@ -68,8 +68,8 @@ export default function AcademicsPage() {
       <PageHero
         crumb="Academics"
         eyebrow="Curriculum"
-        title="A continuous academic pathway from Grade 1 to university entrance"
-        description="Four programmes, a common assessment framework, and a grading scale that is published rather than implied."
+        title="A focused pathway from Grade 9 to university entrance"
+        description="The Ethiopian national secondary curriculum, enriched with university-preparatory depth and practical STEM learning."
       />
 
       {/* Programmes */}
@@ -77,7 +77,7 @@ export default function AcademicsPage() {
         <Reveal>
           <SectionHeading
             eyebrow="Programmes"
-            title="Four stages of study"
+            title="Secondary and preparatory study"
             description="Each stage has its own timetable structure, but assessment weighting is identical across the school."
           />
         </Reveal>
