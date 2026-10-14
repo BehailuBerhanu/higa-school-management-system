@@ -42,80 +42,48 @@ export default function NewsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-        <Reveal>
-          <Card className="overflow-hidden lg:grid lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-0">
-            <div className="relative aspect-[16/10] w-full lg:aspect-auto lg:h-full lg:min-h-[22rem]">
-              <img
-                src="/gallery/graduation-ceremony.png"
-                alt="Graduating students celebrating at the annual ceremony"
-                className="absolute inset-0 size-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col gap-5 p-6 sm:p-10">
-              <div className="flex flex-wrap items-center gap-3">
-                <Badge>Featured</Badge>
-                <Badge variant="outline">{lead.category}</Badge>
-                <span className="text-xs text-muted-foreground">
-                  {formatDate(lead.date)}
-                </span>
+        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.8fr]">
+          <div className="flex flex-col gap-6">
+            <Reveal>
+              <div className="flex flex-col gap-3">
+                <SectionHeading eyebrow="Live from Telegram" title="The latest school updates" />
+                <p className="max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+                  Official announcements and community updates from Higa Model Boarding School's Telegram channel.
+                  Posts shown here come directly from the public channel preview.
+                </p>
               </div>
-              <h2 className="text-balance text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                {lead.title}
-              </h2>
-              <p className="text-pretty leading-relaxed text-muted-foreground">
-                {lead.excerpt}
-              </p>
-              <Button
-                className="w-fit"
-                render={<Link href={`/news/${lead.slug}`} />}
-              >
-                Read the full story
+            </Reveal>
+            <Reveal delay={80}>
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <iframe
+                    src="https://t.me/s/Gogotakanbata"
+                    title="Latest posts from Higa Model Boarding School on Telegram"
+                    className="block h-[760px] w-full border-0 bg-background"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </CardContent>
+              </Card>
+            </Reveal>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button render={<a href="https://t.me/Gogotakanbata" target="_blank" rel="noreferrer" />}>
+                Open Telegram channel
                 <ArrowRightIcon data-icon="inline-end" />
               </Button>
+              <p className="text-sm text-muted-foreground">
+                If the feed does not load, open the channel directly.
+              </p>
             </div>
-          </Card>
-        </Reveal>
-
-        <Separator className="my-14" />
-
-        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
-          <div className="flex flex-col gap-8">
-            <SectionHeading eyebrow="Latest" title="More from the newsroom" />
-            <ul className="grid gap-6 sm:grid-cols-2">
-              {rest.map((item, index) => (
-                <Reveal as="li" key={item.slug} delay={index * 60}>
-                  <Card className="h-full">
-                    <CardHeader>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <Badge variant="outline">{item.category}</Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {formatDate(item.date)}
-                        </span>
-                      </div>
-                      <CardTitle className="mt-3 text-balance text-lg leading-snug">
-                        {item.title}
-                      </CardTitle>
-                      <CardDescription className="text-pretty leading-relaxed">
-                        {item.excerpt}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="mt-auto">
-                      <Link
-                        href={`/news/${item.slug}`}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
-                      >
-                        Read more
-                        <ArrowRightIcon aria-hidden="true" className="size-4" />
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                </Reveal>
-              ))}
-            </ul>
           </div>
 
-          <div className="flex flex-col gap-8">
-            <SectionHeading eyebrow="Calendar" title="Upcoming dates" />
+          <aside className="flex flex-col gap-8">
+            <div className="flex flex-col gap-2">
+              <SectionHeading eyebrow="Calendar" title="Upcoming dates" />
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Dates listed by the school. Check the Telegram channel for the latest announcements or changes.
+              </p>
+            </div>
             <Card>
               <CardContent className="flex flex-col gap-0 p-0">
                 {events.map((event, index) => {
@@ -134,9 +102,7 @@ export default function NewsPage() {
                         </span>
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <p className="font-semibold leading-snug">
-                          {event.title}
-                        </p>
+                        <p className="font-semibold leading-snug">{event.title}</p>
                         <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
                           <CalendarIcon aria-hidden="true" className="size-3.5" />
                           {event.time}
@@ -145,10 +111,8 @@ export default function NewsPage() {
                           <MapPinIcon aria-hidden="true" className="size-3.5" />
                           {event.location}
                         </p>
+                        <span className="sr-only">{index === 0 ? 'Next event' : ''}</span>
                       </div>
-                      <span className="sr-only">
-                        {index === 0 ? 'Next event' : ''}
-                      </span>
                     </div>
                   )
                 })}
@@ -174,14 +138,12 @@ export default function NewsPage() {
                     className="flex items-baseline justify-between gap-4 border-b border-primary-foreground/15 pb-3 last:border-b-0 last:pb-0"
                   >
                     <span className="opacity-80">{label}</span>
-                    <span className="font-sans font-semibold tabular-nums text-secondary">
-                      {value}
-                    </span>
+                    <span className="font-sans font-semibold tabular-nums text-secondary">{value}</span>
                   </div>
                 ))}
               </CardContent>
             </Card>
-          </div>
+          </aside>
         </div>
       </section>
     </>
