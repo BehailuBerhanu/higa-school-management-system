@@ -8,7 +8,7 @@ const highlights = [
   'Grades 9–12',
   'Full boarding & day',
   'Selective regional admission',
-  'Established 2017',
+  'Established 2009 EC / 2017 GC',
 ]
 
 function SchoolEmblem() {
