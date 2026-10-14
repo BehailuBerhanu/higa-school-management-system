@@ -21,7 +21,7 @@ import { faculty, school } from '@/lib/data/school'
 export const metadata: Metadata = {
   title: 'About the school',
   description:
-    'The history, mission, values and leadership of Higa Model Boarding School, a boarding institution in Bahir Dar founded in 1998.',
+    'The history, mission, values and leadership of Higa Model Boarding School, a selective secondary boarding school in Kembata Zone, Ethiopia, established in 2017.',
 }
 
 const values = [
@@ -49,34 +49,34 @@ const values = [
 
 const milestones = [
   {
-    year: '1998',
-    title: 'The school opens',
-    body: 'Four classrooms and thirty-one students on a leased plot on Higa Road.',
-  },
-  {
-    year: '2004',
-    title: 'First boarding house',
-    body: 'Abay House opens with forty-eight residential places and two resident tutors.',
-  },
-  {
-    year: '2011',
-    title: 'Secondary programme accredited',
-    body: 'The Regional Education Bureau accredits Grades 9 and 10, and the first national cohort sits its examination.',
+    year: '2017',
+    title: 'Higa Model opens',
+    body: 'The school launches on a campus that previously served as a university property, through collaboration among the District Education Department, local community members and Gogota Care.',
   },
   {
     year: '2017',
-    title: 'Preparatory streams introduced',
-    body: 'Natural and social science streams open for Grades 11 and 12.',
+    title: 'Community partnership',
+    body: 'The school begins its work as a regional boarding school through collaboration between education leaders, the local community and Gogota Care.',
   },
   {
-    year: '2023',
-    title: 'Digital academic records',
-    body: 'Paper mark books are retired in favour of a single verified records platform.',
+    year: '2017+',
+    title: 'Selective secondary education',
+    body: 'Higa serves high-achieving students from across Kembata Zone, with admission based on strong performance in the national Grade 8 examination.',
   },
   {
-    year: '2026',
-    title: 'Alemu Science Wing',
-    body: 'Three teaching laboratories and a demonstration theatre open on the north campus.',
+    year: 'STEM',
+    title: 'Practical science and technology',
+    body: 'A dedicated STEM Center developed with Stempower supports practical learning in ICT, engineering concepts and science experiments.',
+  },
+  {
+    year: 'Library',
+    title: 'Learning resources strengthened',
+    body: 'WEEMA International and Roots Ethiopia support improvements to the central library, textbooks, reference books and science-learning resources.',
+  },
+  {
+    year: 'Today',
+    title: 'Local roots, wider horizons',
+    body: 'Higa’s vision is to help students from regional and rural communities achieve academic excellence while staying connected to their cultural identity.'
   },
 ]
 
@@ -86,8 +86,8 @@ export default function AboutPage() {
       <PageHero
         crumb="About"
         eyebrow="Our story"
-        title="Twenty-eight years of building a boarding school worth trusting"
-        description="Higa Model began as four classrooms in Bahir Dar. It now serves secondary and preparatory students, with 1,482 students and 96 academic staff."
+        title="A regional school with an ambitious vision"
+        description="Established in 2017, Higa Model Boarding School serves high-achieving students from across Kembata Zone, pairing academic ambition with cultural identity and opportunity."
       />
 
       {/* Mission */}
@@ -100,30 +100,21 @@ export default function AboutPage() {
             />
             <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
               <p>
-                We are a selective but not exclusive school. Entry is by
-                assessment, and once a student is admitted the school takes
-                responsibility for the outcome. That means small teaching
-                groups, supervised study, and a mark book that is checked every
-                single term.
+                Higa Model is a selective regional boarding school. Students are chosen from across Kembata Zone based on outstanding performance in the national Grade 8 examination.
               </p>
               <p>
-                Our residential programme exists to protect study time. Students
-                arrive at breakfast having slept properly, sit in class with
-                their preparation done, and return to a supervised hall in the
-                evening. It is unglamorous and it works.
+                The school delivers Ethiopia’s national secondary curriculum and extends learning through a dedicated STEM Center, computer facilities and practical science and engineering activities.
               </p>
               <p>
-                We publish our results in full — including the two candidates in
-                2026 who did not place. Accountability is not a marketing
-                exercise here.
+                The school’s founding vision is to show that students from rural and regional communities can excel academically without losing their cultural identity.
               </p>
             </div>
             <dl className="mt-2 grid grid-cols-2 gap-6 border-t pt-6 sm:grid-cols-4">
               {[
                 { k: 'Founded', v: String(school.founded) },
-                { k: 'Students', v: '1,482' },
-                { k: 'Staff', v: '96' },
-                { k: 'Ratio', v: '1 : 15' },
+                { k: 'Grades', v: '9–12' },
+                { k: 'Reach', v: 'Kembata Zone' },
+                { k: 'Focus', v: 'STEM' },
               ].map((item) => (
                 <div key={item.k}>
                   <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
