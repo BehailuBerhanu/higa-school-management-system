@@ -420,7 +420,7 @@
 }
 
 
-/* Mobile-only glowing torch wire background; desktop hero remains unchanged. */
+/* Subtle, static mobile torch-and-wire artwork. Keep the gold fine and restrained. */
 .higa-mobile-wire {
   display:none;
   position:absolute;
@@ -428,68 +428,28 @@
   z-index:0;
   overflow:hidden;
   pointer-events:none;
-  opacity:.88;
+  opacity:.48;
   -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 93%, transparent 100%);
   mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 93%, transparent 100%);
 }
 .higa-mobile-wire svg { display:block; width:100%; height:100%; }
 .higa-wire-orbit {
   fill:none;
-  stroke:#cda444;
-  stroke-width:.72;
+  stroke:#b89a4c;
+  stroke-width:.65;
   stroke-linecap:round;
   stroke-dasharray:1 0;
-  transform-box:fill-box;
-  transform-origin:center;
-  filter:drop-shadow(0 0 3px rgb(255 211 91 / 36%));
+  filter:none;
 }
-.higa-wire-orbit-one { animation:higa-orbit-turn 36s linear infinite; }
-.higa-wire-orbit-two { animation:higa-orbit-turn-reverse 44s linear infinite; }
-.higa-wire-orbit-three { stroke-width:.8; opacity:.8; animation:higa-orbit-drift-three 22s ease-in-out infinite alternate; }
-.higa-wire-orbit-four { stroke-width:.62; opacity:.7; stroke-dasharray:2 5 1 9; animation:higa-orbit-drift-four 27s ease-in-out infinite alternate; }
-.higa-wire-bloom { fill:url(#higa-wire-glow); filter:url(#higa-wire-blur); animation:higa-wire-pulse 3.8s ease-in-out infinite; }
-.higa-wire-point { fill:#fff0a2; filter:drop-shadow(0 0 4px rgb(255 225 127 / 90%)); }
-.higa-torch-ring {
-  fill:none;
-  stroke:#c9a347;
-  stroke-width:.75;
-  stroke-dasharray:2 5;
-  opacity:.75;
-}
-.higa-torch-rays {
-  fill:none;
-  stroke:#d8b24e;
-  stroke-width:.75;
-  stroke-linecap:round;
-  transform-box:fill-box;
-  transform-origin:center;
-  animation:higa-rays-turn 48s linear infinite;
-}
-.higa-torch-flame {
-  fill:none;
-  stroke:#ffdf78;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  filter:drop-shadow(0 0 4px rgb(255 216 111 / 75%));
-  animation:higa-flame-flicker 2.4s ease-in-out infinite alternate;
-}
-.higa-torch-bowl,.higa-torch-stem {
-  fill:none;
-  stroke:#d9b34f;
-  stroke-width:1.5;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  filter:drop-shadow(0 0 3px rgb(255 216 111 / 55%));
-}
-@keyframes higa-orbit-drift-three { to { transform:translate(8px,-6px) rotate(4deg); } }
-@keyframes higa-orbit-drift-four { to { transform:translate(-7px,5px) rotate(-4deg); } }
-@keyframes higa-rays-turn { to { transform:rotate(360deg); } }
-@keyframes higa-flame-flicker {
-  0% { opacity:.78; transform:scale(.98,1); filter:drop-shadow(0 0 3px rgb(255 216 111 / 50%)); }
-  45% { opacity:1; transform:scale(1.04,1.06) skewX(-1deg); filter:drop-shadow(0 0 9px rgb(255 216 111 / 95%)); }
-  100% { opacity:.88; transform:scale(.99,1.02) skewX(1deg); }
-}
+.higa-wire-orbit-one,.higa-wire-orbit-two,.higa-wire-orbit-three,.higa-wire-orbit-four { animation:none !important; }
+.higa-wire-orbit-three { stroke-width:.7; opacity:.65; }
+.higa-wire-orbit-four { stroke-width:.55; opacity:.55; stroke-dasharray:2 5 1 9; }
+.higa-wire-bloom { fill:transparent; filter:none; animation:none !important; }
+.higa-wire-point { fill:#dfc36e; filter:none; }
+.higa-torch-ring { fill:none; stroke:#b89a4c; stroke-width:.65; stroke-dasharray:2 5; opacity:.6; }
+.higa-torch-rays { fill:none; stroke:#b89a4c; stroke-width:.65; stroke-linecap:round; animation:none !important; }
+.higa-torch-flame { fill:none; stroke:#e2c66d; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; filter:none; animation:none !important; opacity:.85; }
+.higa-torch-bowl,.higa-torch-stem { fill:none; stroke:#bda052; stroke-width:1.15; stroke-linecap:round; stroke-linejoin:round; filter:none; }
 @media (max-width:767px) {
   .higa-mobile-wire { display:block; }
   .higa-hero-inner { position:relative; z-index:1; }
@@ -499,7 +459,6 @@
 @media (prefers-reduced-motion:reduce) {
   .higa-wire-orbit,.higa-wire-bloom,.higa-torch-rays,.higa-torch-flame { animation:none !important; }
 }
-
 
 /* Mobile hero: keep the torch and wire artwork still, and fit the hero to one screen. */
 @media (max-width: 767px) {
