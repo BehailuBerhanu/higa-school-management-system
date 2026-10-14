@@ -212,28 +212,39 @@ export default function AboutPage() {
               <Reveal key={person.name} delay={i * 80} className="min-w-0">
                 <Card className="h-full min-w-0 overflow-hidden">
                   <CardContent className="flex min-w-0 flex-col items-stretch gap-3 pt-6">
-                    {person.role === 'Principal' ? (
-                      <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
-                        <Image
-                          src="/principal-portrait.jpg"
-                          alt="Temesgen Daniel, Principal of Higa Model Boarding School"
-                          fill
-                          sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
-                          className="object-cover object-[center_28%]"
-                        />
-                      </div>
-                    ) : (
-                      <span
-                        aria-hidden="true"
-                        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
-                      >
-                        {person.name
-                          .replace(/^(Dr\.|W\/ro|Ato)\s/, '')
-                          .split(' ')
-                          .map((n) => n[0])
-                          .join('')}
-                      </span>
-                    )}
+                    {(() => {
+                      const portrait =
+                        person.role === 'Principal'
+                          ? '/principal-portrait.jpg'
+                          : person.detail.includes('Mathematics')
+                            ? '/maths-teacher.jpg'
+                            : person.detail.includes('Chemistry')
+                              ? '/chemistry-teacher.jpg'
+                              : null
+
+                      return portrait ? (
+                        <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
+                          <Image
+                            src={portrait}
+                            alt={`${person.name}, ${person.role} at Higa Model Boarding School`}
+                            fill
+                            sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <span
+                          aria-hidden="true"
+                          className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
+                        >
+                          {person.name
+                            .replace(/^(Dr\.|W\/ro|Ato)\s/, '')
+                            .split(' ')
+                            .map((n) => n[0])
+                            .join('')}
+                        </span>
+                      )
+                    })()}
                     <div className="w-full min-w-0 text-center">
                       <p className="mx-auto w-full min-w-0 whitespace-normal break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
                         {person.name}
