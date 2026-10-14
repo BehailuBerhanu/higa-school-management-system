@@ -176,9 +176,9 @@ export const events = [
 
 export const faculty = [
   { name: 'Temesgen Daniel', role: 'Principal', detail: 'School Principal' },
-  { name: 'W/ro Hirut Bekele', role: 'Academic Dean', detail: 'MSc Mathematics · 17 years' },
-  { name: 'Ato Getachew Molla', role: 'Dean of Boarding', detail: 'BA Psychology · 14 years' },
-  { name: 'W/ro Selamawit Abera', role: 'Head of Science', detail: 'MSc Chemistry · 12 years' },
+  { name: 'Nigatu', role: 'Mathematics Teacher', detail: 'Mathematics' },
+  { name: 'Deneke', role: 'Chemistry Teacher', detail: 'Chemistry' },
+  { name: 'Mulgeta', role: 'History Teacher', detail: 'History' },
 ]
 
 export const testimonials = [
