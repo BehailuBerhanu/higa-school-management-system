@@ -8,10 +8,7 @@ import { Reveal, SectionHeading } from '@/components/public/reveal'
 import { faculty } from '@/lib/data/school'
 
 function portraitFor(person: (typeof faculty)[number]) {
-  if (person.detail.includes('Mathematics')) return '/maths-teacher.jpg'
-  if (person.detail.includes('Chemistry')) return '/chemistry-teacher.jpg'
-  if (person.detail.includes('History')) return '/history-teacher.jpg'
-  return null
+  return person.image ?? null
 }
 
 export function StaffCarousel() {
