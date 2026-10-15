@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/card'
 import { PageHero } from '@/components/public/page-hero'
 import { Reveal, SectionHeading } from '@/components/public/reveal'
+import { StaffCarousel } from '@/components/public/staff-carousel'
 import { faculty, school } from '@/lib/data/school'
 
 export const metadata: Metadata = {
@@ -197,74 +198,8 @@ export default function AboutPage() {
         </ol>
       </section>
 
-      {/* Leadership */}
-      <section className="border-t bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Leadership"
-              title="The senior team"
-              description="Four senior leaders share responsibility for academics, boarding and pastoral care."
-            />
-          </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {faculty.map((person, i) => (
-              <Reveal key={person.name} delay={i * 80} className="min-w-0">
-                <Card className="h-full min-w-0 overflow-hidden">
-                  <CardContent className="flex min-w-0 flex-col items-stretch gap-3 pt-6">
-                    {(() => {
-                      const portrait =
-                        person.role === 'Principal'
-                          ? '/principal-portrait.jpg'
-                          : person.detail.includes('Mathematics')
-                            ? '/maths-teacher.jpg'
-                            : person.detail.includes('Chemistry')
-                              ? '/chemistry-teacher.jpg'
-                              : person.detail.includes('History')
-                                ? '/history-teacher.jpg'
-                                : null
-
-                      return portrait ? (
-                        <div className="relative mx-auto aspect-[4/5] w-full max-w-[18rem] overflow-hidden rounded-xl bg-primary/5 sm:max-w-none">
-                          <Image
-                            src={portrait}
-                            alt={`${person.name}, ${person.role} at Higa Model Boarding School`}
-                            fill
-                            sizes="(max-width: 639px) 80vw, (max-width: 1023px) 40vw, 22vw"
-                            className="object-cover"
-                          />
-                        </div>
-                      ) : (
-                        <span
-                          aria-hidden="true"
-                          className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary font-serif text-lg font-bold text-primary-foreground"
-                        >
-                          {person.name
-                            .replace(/^(Dr\.|W\/ro|Ato)\s/, '')
-                            .split(' ')
-                            .map((n) => n[0])
-                            .join('')}
-                        </span>
-                      )
-                    })()}
-                    <div className="w-full min-w-0 text-center">
-                      <p className="mx-auto w-full min-w-0 whitespace-normal break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">
-                        {person.name}
-                      </p>
-                      <Badge variant="secondary" className="mt-2">
-                        {person.role}
-                      </Badge>
-                      <p className="mt-3 text-sm text-muted-foreground">
-                        {person.detail}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Staff carousel */}
+      <StaffCarousel />
     </>
   )
 }
