@@ -370,25 +370,32 @@ export default function HomePage() {
               className="mx-auto"
             />
           </Reveal>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { src: '/students-at-classroom.jpg', title: 'In the Classroom', alt: 'Students learning in the classroom' },
-              { src: '/students-at-competition.jpg', title: 'Academic Competitions', alt: 'Students taking part in a competition' },
-              { src: '/students-at-exam.jpg', title: 'Exam Time', alt: 'Students taking an examination' },
-              { src: '/students-at-flag.jpg', title: 'School Assembly', alt: 'Students gathered for a school flag ceremony' },
-              { src: '/students-at-graduation.jpg', title: 'Graduation Day', alt: 'Students celebrating graduation' },
-              { src: '/students-at-lifeexperiencetraining.jpg', title: 'Life Experience Training', alt: 'Students participating in life experience training' },
-              { src: '/students-at-trip.jpg', title: 'Learning Beyond Campus', alt: 'Students on an educational trip' },
-              { src: '/students-at-welcomeday.jpg', title: 'Welcome Day', alt: 'Students taking part in welcome day' },
-            ].map((photo, i) => (
-              <Reveal key={photo.src} delay={i * 45}>
-                <article className="group h-full overflow-hidden rounded-2xl">
+          <div className="relative">
+            <div
+              id="campus-life-gallery"
+              className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              aria-label="Campus life photos"
+            >
+              {[
+                { src: '/students-at-classroom.jpg', title: 'In the Classroom', alt: 'Students learning in the classroom' },
+                { src: '/students-at-competition.jpg', title: 'Academic Competitions', alt: 'Students taking part in a competition' },
+                { src: '/students-at-exam.jpg', title: 'Exam Time', alt: 'Students taking an examination' },
+                { src: '/students-at-flag.jpg', title: 'School Assembly', alt: 'Students gathered for a school flag ceremony' },
+                { src: '/students-at-graduation.jpg', title: 'Graduation Day', alt: 'Students celebrating graduation' },
+                { src: '/students-at-lifeexperiencetraining.jpg', title: 'Life Experience Training', alt: 'Students participating in life experience training' },
+                { src: '/students-at-trip.jpg', title: 'Learning Beyond Campus', alt: 'Students on an educational trip' },
+                { src: '/students-at-welcomeday.jpg', title: 'Welcome Day', alt: 'Students taking part in welcome day' },
+              ].map((photo, i) => (
+                <article
+                  key={photo.src}
+                  className="group w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-3.75rem)/4)]"
+                >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
                     <Image
                       src={photo.src}
                       alt={photo.alt}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 82vw, (max-width: 1024px) 46vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
@@ -396,8 +403,24 @@ export default function HomePage() {
                     {photo.title}
                   </h3>
                 </article>
-              </Reveal>
-            ))}
+              ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Scroll campus life photos left"
+              onClick={() => document.getElementById('campus-life-gallery')?.scrollBy({ left: -360, behavior: 'smooth' })}
+              className="absolute -left-2 top-[38%] z-10 flex size-11 items-center justify-center rounded-full border bg-background/95 text-foreground shadow-md transition hover:bg-background sm:-left-5"
+            >
+              <ArrowLeftIcon className="size-5" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll campus life photos right"
+              onClick={() => document.getElementById('campus-life-gallery')?.scrollBy({ left: 360, behavior: 'smooth' })}
+              className="absolute -right-2 top-[38%] z-10 flex size-11 items-center justify-center rounded-full border bg-background/95 text-foreground shadow-md transition hover:bg-background sm:-right-5"
+            >
+              <ArrowRightIcon className="size-5" aria-hidden="true" />
+            </button>
           </div>
           <div className="flex justify-center">
             <Button variant="outline" render={<Link href="/campus-life" />}>
@@ -407,7 +430,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
 
     </>
   )
