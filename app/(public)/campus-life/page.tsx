@@ -22,6 +22,7 @@ import { Separator } from '@/components/ui/separator'
 import { PageHero } from '@/components/public/page-hero'
 import { Reveal, SectionHeading } from '@/components/public/reveal'
 import { CampusLifeVideos } from '@/components/public/campus-life-videos'
+import { CampusLifeGallery } from '@/components/public/campus-life-gallery'
 import { campusLife } from '@/lib/data/school'
 
 export const metadata: Metadata = {
@@ -100,6 +101,8 @@ export default function CampusLifePage() {
           </ul>
         </div>
       </section>
+
+      <CampusLifeGallery />
 
       <CampusLifeVideos />
 
