@@ -8,6 +8,10 @@ import {
   QuoteIcon,
   ShieldCheckIcon,
   UsersIcon,
+  GraduationCapIcon,
+  NewspaperIcon,
+  MailIcon,
+  BookMarkedIcon,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -64,49 +68,57 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      {/* Impact statistics and quick links — compact second section */}
-      <section aria-labelledby="impact-heading" className="border-b bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Statistics</p>
-              <h2 id="impact-heading" className="mt-2 font-serif text-3xl font-bold tracking-tight sm:text-4xl">Our impact in numbers</h2>
-              <div className="mt-3 flex gap-2" aria-hidden="true"><span className="h-1 w-8 rounded-full bg-primary" /><span className="h-1 w-16 rounded-full bg-secondary" /></div>
+      {/* Compact impact panel and visual quick links */}
+      <section aria-labelledby="impact-heading" className="relative overflow-hidden border-b bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 via-blue-50 to-emerald-50 p-5 shadow-sm ring-1 ring-blue-100 sm:p-8 lg:p-10">
+            <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <div className="mb-3 flex gap-1.5" aria-hidden="true"><span className="h-1.5 w-8 rounded-full bg-emerald-600" /><span className="h-1.5 w-5 rounded-full bg-amber-400" /></div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600">Our impact</p>
+                <h2 id="impact-heading" className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Our Impact in Numbers</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">A legacy of learning, helping students grow into confident future leaders.</p>
+              </div>
+              <Link href="/about" className="inline-flex w-fit items-center gap-2 rounded-full px-1 py-2 text-sm font-semibold text-blue-800 transition hover:gap-3">Discover our school <ArrowRightIcon className="size-4" aria-hidden="true" /></Link>
             </div>
-            <Link href="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">About our school <ArrowRightIcon className="size-4" aria-hidden="true" /></Link>
+
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <Link href="/about" className="group flex min-h-36 items-start gap-4 rounded-2xl border border-white/90 bg-white/90 p-4 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 ring-1 ring-blue-200 sm:size-14"><CalendarDaysIcon className="size-6 sm:size-7" aria-hidden="true" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">2017</span><span className="mt-1 block font-semibold text-slate-800">Opened in</span><span className="mt-1 block text-sm leading-5 text-slate-600">2009 Ethiopian Calendar</span></span><ArrowRightIcon className="mt-1 size-5 shrink-0 text-slate-500 transition group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+              <Link href="/academics" className="group flex min-h-36 items-start gap-4 rounded-2xl border border-white/90 bg-white/90 p-4 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200 sm:size-14"><GraduationCapIcon className="size-6 sm:size-7" aria-hidden="true" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl">Grades 9–12</span><span className="mt-1 block font-semibold text-slate-800">We educate</span><span className="mt-1 block text-sm leading-5 text-slate-600">Secondary and preparatory education</span></span><ArrowRightIcon className="mt-1 size-5 shrink-0 text-slate-500 transition group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+              <Link href="/academics" className="group flex min-h-36 items-start gap-4 rounded-2xl border border-white/90 bg-white/90 p-4 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-700 ring-1 ring-violet-200 sm:size-14"><FlaskConicalIcon className="size-6 sm:size-7" aria-hidden="true" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl">STEM Center</span><span className="mt-1 block font-semibold text-slate-800">Innovation & discovery</span><span className="mt-1 block text-sm leading-5 text-slate-600">Practical science and technology learning</span></span><ArrowRightIcon className="mt-1 size-5 shrink-0 text-slate-500 transition group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+              <Link href="/about" className="group flex min-h-36 items-start gap-4 rounded-2xl border border-white/90 bg-white/90 p-4 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-700 ring-1 ring-orange-200 sm:size-14"><UsersIcon className="size-6 sm:size-7" aria-hidden="true" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl">3 priorities</span><span className="mt-1 block font-semibold text-slate-800">For a brighter future</span><span className="mt-1 block text-sm leading-5 text-slate-600">Academic excellence, cultural identity and leadership</span></span><ArrowRightIcon className="mt-1 size-5 shrink-0 text-slate-500 transition group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-8 grid overflow-hidden rounded-2xl border bg-background sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex min-h-44 flex-col justify-center gap-2 bg-primary p-6 text-primary-foreground sm:col-span-2 lg:col-span-1">
-              <p className="text-sm font-medium text-primary-foreground/80">Opened in</p>
-              <p className="font-serif text-4xl font-bold tracking-tight">2017 <span className="text-xl font-medium">GC</span></p>
-              <p className="text-sm text-primary-foreground/80">2009 Ethiopian Calendar</p>
-              <Link href="/about" className="mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-background px-3 py-2 text-sm font-semibold text-foreground hover:bg-background/90">About us <ArrowRightIcon className="size-4" /></Link>
-            </div>
-            <div className="flex min-h-44 flex-col justify-center border-t p-6 text-center sm:border-l sm:border-t-0">
-              <p className="font-serif text-5xl font-bold text-primary">9–12</p><p className="mt-3 font-semibold">Grades served</p><p className="mt-1 text-sm text-muted-foreground">Secondary and preparatory education</p>
-            </div>
-            <div className="flex min-h-44 flex-col justify-center border-t p-6 text-center sm:border-l sm:border-t-0">
-              <p className="font-serif text-5xl font-bold text-primary">1</p><p className="mt-3 font-semibold">Dedicated STEM Center</p><p className="mt-1 text-sm text-muted-foreground">Practical science and technology learning</p>
-            </div>
-            <div className="flex min-h-44 flex-col justify-center border-t p-6 text-center sm:border-l sm:border-t-0">
-              <p className="font-serif text-5xl font-bold text-primary">3</p><p className="mt-3 font-semibold">Learning priorities</p><p className="mt-1 text-sm text-muted-foreground">Academic excellence, cultural identity and leadership</p>
-            </div>
-          </div>
-
-          <div className="mt-7 flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center">
-            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Quick links</p>
-            <nav aria-label="Homepage quick links" className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-9 sm:mt-12">
+            <div className="mb-5 flex gap-1.5" aria-hidden="true"><span className="h-1.5 w-8 rounded-full bg-emerald-600" /><span className="h-1.5 w-5 rounded-full bg-amber-400" /></div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600">Quick links</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Explore Our School</h2>
+            <p className="mt-2 text-sm text-slate-600 sm:text-base">Find what you need, all in one place.</p>
+            <nav aria-label="Homepage quick links" className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {[
-                { label: 'About', href: '/about' },
-                { label: 'Academics', href: '/academics' },
-                { label: 'Admissions', href: '/admissions' },
-                { label: 'Campus life', href: '/campus-life' },
-                { label: 'News', href: '/news' },
-                { label: 'Contact', href: '/contact' },
-              ].map((item) => (
-                <Link key={item.href} href={item.href} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
-                  {item.label}<ArrowRightIcon className="size-4 shrink-0" aria-hidden="true" />
+                { label: 'About Us', href: '/about', Icon: BookOpenIcon, color: 'bg-blue-100 text-blue-700 ring-blue-200' },
+                { label: 'Academics', href: '/academics', Icon: GraduationCapIcon, color: 'bg-emerald-100 text-emerald-700 ring-emerald-200' },
+                { label: 'Admissions', href: '/admissions', Icon: BookMarkedIcon, color: 'bg-violet-100 text-violet-700 ring-violet-200' },
+                { label: 'Campus Life', href: '/campus-life', Icon: UsersIcon, color: 'bg-orange-100 text-orange-700 ring-orange-200' },
+                { label: 'News', href: '/news', Icon: NewspaperIcon, color: 'bg-cyan-100 text-cyan-700 ring-cyan-200' },
+                { label: 'Contact', href: '/contact', Icon: MailIcon, color: 'bg-pink-100 text-pink-700 ring-pink-200' },
+              ].map(({ label, href, Icon, color }) => (
+                <Link key={href} href={href} className="group flex min-h-[76px] min-w-0 items-center gap-3 rounded-xl border border-blue-100 bg-white px-3 py-3 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md sm:flex-col sm:items-start sm:gap-3 sm:p-4 lg:min-h-32">
+                  <span className={`flex size-10 shrink-0 items-center justify-center rounded-full ring-1 transition group-hover:scale-105 sm:size-11 ${color}`}><Icon className="size-5 sm:size-6" aria-hidden="true" /></span>
+                  <span className="flex min-w-0 flex-1 items-center justify-between gap-1 text-sm font-semibold text-slate-800 sm:w-full sm:text-base"><span className="break-words">{label}</span><ArrowRightIcon className="size-4 shrink-0 text-blue-700 transition group-hover:translate-x-1" aria-hidden="true" /></span>
                 </Link>
               ))}
             </nav>
