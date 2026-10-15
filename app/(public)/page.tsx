@@ -68,23 +68,43 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      {/* Principal's welcome — retained as a key part of the homepage */}
-      <section aria-labelledby="principal-welcome-heading" className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
-          <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-r from-emerald-50 via-white to-amber-50 p-6 sm:p-8">
-            <div className="absolute left-0 top-0 h-full w-1.5 bg-emerald-700" aria-hidden="true" />
-            <div className="flex items-start gap-4 sm:gap-6">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200 sm:size-14">
-                <QuoteIcon className="size-6 sm:size-7" aria-hidden="true" />
-              </div>
+      {/* Principal's message — restored to the original two-column portrait layout */}
+      <section className="border-y bg-card">
+        <div className="mx-auto grid min-w-0 max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start">
+          <Reveal className="min-w-0">
+            <div className="w-full min-w-0 overflow-hidden rounded-2xl border">
+              <Image
+                src="/principal-portrait.jpg"
+                alt="Temesgen Daniel, Principal of Higa Model Boarding School"
+                width={760}
+                height={950}
+                className="h-[24rem] w-full object-cover object-[center_28%] lg:h-[28rem]"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120} className="flex min-w-0 flex-col gap-6">
+            <SectionHeading
+              eyebrow="Principal’s message"
+              title="We measure ourselves by what our students become."
+            />
+            <QuoteIcon className="size-8 text-secondary" aria-hidden="true" />
+            <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
+              <p>Higa Model Boarding School was established in 2017 through collaboration among the District Education Department, local community members and Gogota Care. From the beginning, its purpose has been to widen opportunity for talented students from across Kembata Zone.</p>
+              <p>We believe students from rural and regional communities can reach high academic standards without giving up their cultural identity. Our national curriculum is strengthened by practical learning through the school’s dedicated STEM Center and learning resources built with partner support.</p>
+              <p>We welcome families and community partners who share our ambition for young people to connect local knowledge with wider educational and career opportunities.</p>
+            </div>
+            <div className="flex min-w-0 flex-wrap items-center gap-4">
+              <Separator className="w-10 shrink-0" />
               <div className="min-w-0">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-800">A message from our principal</p>
-                <h2 id="principal-welcome-heading" className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Welcome to Higa Model Boarding School</h2>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-700 sm:text-base">At Higa, we are committed to helping students grow through academic effort, strong character, and a supportive learning community. We encourage every learner to pursue excellence while staying connected to their culture and community.</p>
-                <p className="mt-4 font-semibold text-slate-900">Temesgen Daniel <span className="font-normal text-slate-600">· School Principal</span></p>
+                <p className="w-full break-words [overflow-wrap:anywhere] font-serif text-base font-semibold leading-tight">Temesgen Daniel</p>
+                <p className="text-sm text-muted-foreground">Principal</p>
               </div>
             </div>
-          </div>
+            <Button variant="outline" className="self-start" render={<Link href="/about" />}>
+              More about the school
+              <ArrowRightIcon data-icon="inline-end" />
+            </Button>
+          </Reveal>
         </div>
       </section>
 
