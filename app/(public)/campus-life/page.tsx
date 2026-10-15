@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import {
   BedDoubleIcon,
@@ -8,7 +7,6 @@ import {
   TrophyIcon,
   UsersRoundIcon,
   HeartPulseIcon,
-  ClockIcon,
   ArrowRightIcon,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -23,6 +21,7 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { PageHero } from '@/components/public/page-hero'
 import { Reveal, SectionHeading } from '@/components/public/reveal'
+import { CampusLifeVideos } from '@/components/public/campus-life-videos'
 import { campusLife } from '@/lib/data/school'
 
 export const metadata: Metadata = {
@@ -40,29 +39,7 @@ const icons = [
   HeartPulseIcon,
 ]
 
-const dayRhythm = [
-  { time: '05:30', label: 'Rising bell', detail: 'Wash, tidy, house inspection' },
-  { time: '06:15', label: 'Morning study', detail: 'Supervised silent revision' },
-  { time: '07:30', label: 'Breakfast', detail: 'Dining hall, house tables' },
-  { time: '08:15', label: 'Assembly', detail: 'Notices, flag, house briefing' },
-  { time: '08:30', label: 'Period 1–4', detail: 'Core academic block' },
-  { time: '12:30', label: 'Lunch & rest', detail: 'Dining hall, then free period' },
-  { time: '14:00', label: 'Period 5–7', detail: 'Practicals, electives, labs' },
-  { time: '16:30', label: 'Sport & clubs', detail: 'Inter-house leagues, societies' },
-  { time: '18:30', label: 'Dinner', detail: 'Dining hall' },
-  { time: '19:30', label: 'Evening study', detail: 'Prep with duty tutor on call' },
-  { time: '21:30', label: 'House time', detail: 'Reading, letters, quiet games' },
-  { time: '22:00', label: 'Lights out', detail: 'Dormitory rounds by resident tutor' },
-]
 
-const houses = [
-  { name: 'Abay', colour: 'Blue', motto: 'Steady as the river' },
-  { name: 'Simien', colour: 'Green', motto: 'Climb higher' },
-  { name: 'Awash', colour: 'Amber', motto: 'Carry the current' },
-  { name: 'Bale', colour: 'Maroon', motto: 'Rooted and rising' },
-  { name: 'Rift', colour: 'Slate', motto: 'Depth before height' },
-  { name: 'Tana', colour: 'Teal', motto: 'Wide and calm' },
-]
 
 const clubs = [
   'Debate & Public Speaking',
@@ -79,24 +56,7 @@ const clubs = [
   'Coding Club',
 ]
 
-const pastoral = [
-  {
-    title: 'Resident tutors',
-    body: 'Each house has two resident tutors living on site, responsible for a group of no more than twenty students.',
-  },
-  {
-    title: 'Counselling service',
-    body: 'A full-time counsellor holds confidential weekly drop-in hours and runs transition support for new boarders.',
-  },
-  {
-    title: 'Health clinic',
-    body: 'An on-campus clinic staffed by a full-time nurse, with a visiting physician twice weekly and a referral arrangement with a nearby hospital.',
-  },
-  {
-    title: 'Guardian contact',
-    body: 'Structured Sunday call windows, a termly written house report, and two parent conference days each year.',
-  },
-]
+
 
 export default function CampusLifePage() {
   return (
@@ -140,6 +100,8 @@ export default function CampusLifePage() {
           </ul>
         </div>
       </section>
+
+      <CampusLifeVideos />
 
       <section className="bg-primary py-20 text-primary-foreground sm:py-24">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-6 text-center">
