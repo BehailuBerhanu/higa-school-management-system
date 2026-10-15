@@ -175,10 +175,20 @@ export const events = [
 ]
 
 export const faculty = [
-  { name: 'Temesgen Daniel', role: 'Principal', detail: 'School Principal' },
-  { name: 'Nigatu', role: 'Mathematics Teacher', detail: 'Mathematics' },
-  { name: 'Deneke', role: 'Chemistry Teacher', detail: 'Chemistry' },
-  { name: 'Mulgeta', role: 'History Teacher', detail: 'History' },
+  { name: 'Temesgen Daniel', role: 'Principal', detail: 'School Principal', image: '/principal-portrait.jpg' },
+  { name: 'Nigatu', role: 'Mathematics Teacher', detail: 'Mathematics', image: '/maths-teacher.jpg' },
+  { name: 'Deneke', role: 'Chemistry Teacher', detail: 'Chemistry', image: '/chemistry-teacher.jpg' },
+  { name: 'Mulgeta', role: 'History Teacher', detail: 'History', image: '/history-teacher.jpg' },
+  { name: 'Tesfahun Markos', role: 'Physics Teacher · Grades 11–12', detail: 'Preparatory Physics', image: '/physics11-12-teacher.jpg' },
+  { name: 'Meles', role: 'Biology Teacher · Grades 11–12', detail: 'Preparatory Biology', image: '/biology11-12-teacher.jpg' },
+  { name: 'Yilma Yakob', role: 'IT Teacher · Grades 9–10', detail: 'Information Technology', image: '/IT9-10-teacher.jpg' },
+  { name: 'Tesfaye Desalegn', role: 'Web Development & Design Teacher · Grades 11–12', detail: 'Web Development and Design', image: '/web-teacher.jpg' },
+  { name: 'Name to be confirmed', role: 'HPE Teacher · Grades 9–10', detail: 'Health and Physical Education', image: '/HPE-teacher.jpg' },
+  { name: 'Name to be confirmed', role: 'Biology Teacher · Grade 9', detail: 'Biology', image: '/biology9-teacher.jpg' },
+  { name: 'Meharu', role: 'Biology Teacher · Grade 10', detail: 'Biology', image: '/biology-10-teacher.jpg' },
+  { name: 'Desalech', role: 'Amharic Teacher · Grades 9–10', detail: 'Amharic', image: '/amharic9-10-teacher.jpg' },
+  { name: 'Melese', role: 'Economics Teacher · Grades 11–12 Social Science', detail: 'Economics', image: '/economics-social-teacher.jpg' },
+  { name: 'Tesfahun', role: 'English Teacher · Grade 9', detail: 'English', image: '/english9-teacher.jpg' },
 ]
 
 export const testimonials = [
