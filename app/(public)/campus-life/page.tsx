@@ -199,37 +199,7 @@ export default function CampusLifePage() {
         </div>
       </section>
 
-      <section className="border-b bg-background py-20 sm:py-24">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Houses"
-              title="Six houses, one campus"
-              description="Every student is placed in a house on arrival and stays in it until graduation. Houses compete termly in sport, debate, choir and academic quiz."
-            />
-          </Reveal>
 
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {houses.map((house, index) => (
-              <Reveal as="li" key={house.name} delay={index * 60}>
-                <Card className="h-full">
-                  <CardHeader>
-                    <div className="flex items-center justify-between gap-3">
-                      <CardTitle className="font-serif text-2xl">
-                        {house.name}
-                      </CardTitle>
-                      <Badge variant="secondary">{house.colour}</Badge>
-                    </div>
-                    <CardDescription className="italic">
-                      &ldquo;{house.motto}&rdquo;
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
 
 
 
