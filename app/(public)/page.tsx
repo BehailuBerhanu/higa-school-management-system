@@ -27,6 +27,7 @@ import { Separator } from '@/components/ui/separator'
 import { AnimatedCounter } from '@/components/public/animated-counter'
 import { HeroSection } from '@/components/public/hero-section'
 import { Reveal, SectionHeading } from '@/components/public/reveal'
+import { CampusLifeGallery } from '@/components/public/campus-life-gallery'
 import {
   campusLife,
   events,
@@ -164,6 +165,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <CampusLifeGallery />
 
     </>
   )
