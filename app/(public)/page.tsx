@@ -358,6 +358,57 @@ export default function HomePage() {
       </section>
 
 
+      {/* A glimpse of campus life */}
+      <section className="border-t bg-card py-20 sm:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6">
+          <Reveal>
+            <SectionHeading
+              eyebrow="A glimpse of campus life"
+              title="Around the school"
+              description="A look at learning, achievement and shared experiences at Higa Model Boarding School."
+              align="center"
+              className="mx-auto"
+            />
+          </Reveal>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: '/students-at-classroom.jpg', title: 'In the Classroom', alt: 'Students learning in the classroom' },
+              { src: '/students-at-competition.jpg', title: 'Academic Competitions', alt: 'Students taking part in a competition' },
+              { src: '/students-at-exam.jpg', title: 'Exam Time', alt: 'Students taking an examination' },
+              { src: '/students-at-flag.jpg', title: 'School Assembly', alt: 'Students gathered for a school flag ceremony' },
+              { src: '/students-at-graduation.jpg', title: 'Graduation Day', alt: 'Students celebrating graduation' },
+              { src: '/students-at-lifeexperiencetraining.jpg', title: 'Life Experience Training', alt: 'Students participating in life experience training' },
+              { src: '/students-at-trip.jpg', title: 'Learning Beyond Campus', alt: 'Students on an educational trip' },
+              { src: '/students-at-welcomeday.jpg', title: 'Welcome Day', alt: 'Students taking part in welcome day' },
+            ].map((photo, i) => (
+              <Reveal key={photo.src} delay={i * 45}>
+                <article className="group h-full overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight">
+                    {photo.title}
+                  </h3>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Button variant="outline" render={<Link href="/campus-life" />}>
+              Explore campus life
+              <ArrowRightIcon data-icon="inline-end" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+
     </>
   )
 }
