@@ -73,7 +73,7 @@ export default function AcademicsPage() {
       />
 
       {/* Programmes */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section className="mx-auto w-full max-w-7xl min-w-0 px-4 py-14 sm:px-6 sm:py-20">
         <Reveal>
           <SectionHeading
             eyebrow="Programmes"
@@ -123,15 +123,15 @@ export default function AcademicsPage() {
 
       {/* Assessment */}
       <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
-          <Reveal>
+        <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2">
+          <Reveal className="min-w-0">
             <SectionHeading
               eyebrow="Assessment"
               title="How a subject mark is built"
               description="Every subject in every grade uses the same four components, totalling one hundred marks per semester."
             />
-            <div className="mt-8 overflow-hidden rounded-xl border bg-background">
-              <Table>
+            <div className="mt-8 w-full min-w-0 max-w-full overflow-x-auto rounded-xl border bg-background">
+              <Table className="w-full min-w-[320px]">
                 <TableHeader>
                   <TableRow>
                     <TableHead>Component</TableHead>
@@ -165,7 +165,7 @@ export default function AcademicsPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={120}>
+          <Reveal delay={120} className="min-w-0">
             <SectionHeading
               eyebrow="Grading system"
               title="Marks and performance bands"
@@ -273,7 +273,7 @@ export default function AcademicsPage() {
 
       {/* FAQ */}
       <section className="border-t bg-card">
-        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+        <div className="mx-auto w-full max-w-3xl min-w-0 px-4 py-14 sm:px-6 sm:py-20">
           <Reveal>
             <SectionHeading
               eyebrow="Questions"
@@ -282,13 +282,13 @@ export default function AcademicsPage() {
             />
           </Reveal>
           <Reveal delay={100} className="mt-10">
-            <Accordion className="rounded-xl border bg-background px-4">
+            <Accordion className="w-full min-w-0 max-w-full overflow-hidden rounded-xl border bg-background px-3 sm:px-4">
               {faqs.map((faq) => (
                 <AccordionItem key={faq.q} value={faq.q}>
-                  <AccordionTrigger className="text-left text-base font-medium">
+                  <AccordionTrigger className="min-w-0 whitespace-normal break-words text-left text-base font-medium">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-pretty leading-relaxed text-muted-foreground">
+                  <AccordionContent className="break-words text-pretty leading-relaxed text-muted-foreground">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
