@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'
 import { useRef } from 'react'
@@ -30,8 +29,8 @@ export function CampusLifeGallery() {
   }
 
   return (
-    <section className="border-t bg-card py-20 sm:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6">
+    <section className="relative z-0 border-t bg-card py-14 sm:py-20">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:px-6">
         <Reveal>
           <SectionHeading
             eyebrow="A glimpse of campus life"
@@ -53,12 +52,11 @@ export function CampusLifeGallery() {
                 className="group w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-3.75rem)/4)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
-                  <Image
+                  <img
                     src={photo.src}
                     alt={photo.alt}
-                    fill
-                    sizes="(max-width: 640px) 82vw, (max-width: 1024px) 46vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight">
