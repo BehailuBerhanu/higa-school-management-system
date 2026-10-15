@@ -68,6 +68,26 @@ export default function HomePage() {
     <>
       <HeroSection />
 
+      {/* Principal's welcome — retained as a key part of the homepage */}
+      <section aria-labelledby="principal-welcome-heading" className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+          <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-r from-emerald-50 via-white to-amber-50 p-6 sm:p-8">
+            <div className="absolute left-0 top-0 h-full w-1.5 bg-emerald-700" aria-hidden="true" />
+            <div className="flex items-start gap-4 sm:gap-6">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200 sm:size-14">
+                <QuoteIcon className="size-6 sm:size-7" aria-hidden="true" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-800">A message from our principal</p>
+                <h2 id="principal-welcome-heading" className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Welcome to Higa Model Boarding School</h2>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-700 sm:text-base">At Higa, we are committed to helping students grow through academic effort, strong character, and a supportive learning community. We encourage every learner to pursue excellence while staying connected to their culture and community.</p>
+                <p className="mt-4 font-semibold text-slate-900">Temesgen Daniel <span className="font-normal text-slate-600">· School Principal</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Compact impact panel and visual quick links */}
       <section aria-labelledby="impact-heading" className="relative overflow-hidden border-b bg-background">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
