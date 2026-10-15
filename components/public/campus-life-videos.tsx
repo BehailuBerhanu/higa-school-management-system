@@ -8,13 +8,15 @@ const videos = [
   {
     title: 'Life at Higa',
     source: 'Facebook Reel',
-    embed: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1057882577166704%2F&show_text=false&width=242&t=0',
+    embed: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1057882577166704%2F&show_text=false&width=560',
+    link: 'https://www.facebook.com/reel/1057882577166704/',
     aspect: 'aspect-[9/16]',
   },
   {
     title: 'Higa Model Boarding School',
     source: 'YouTube',
-    embed: 'https://www.youtube-nocookie.com/embed/WJ1dngMtxvI',
+    embed: 'https://www.youtube.com/embed/WJ1dngMtxvI',
+    link: 'https://youtu.be/WJ1dngMtxvI?si=6s09-jappFSMVYCO',
     aspect: 'aspect-video',
   },
 ]
@@ -46,7 +48,7 @@ export function CampusLifeVideos() {
             aria-label="Campus life videos"
           >
             {videos.map((video) => (
-              <article key={video.title} className="w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[32%]">
+              <article key={video.title} className="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[32%]">
                 <div className="overflow-hidden rounded-2xl border bg-background shadow-sm">
                   <div className={`relative ${video.aspect} overflow-hidden bg-black`}>
                     <iframe
@@ -55,7 +57,7 @@ export function CampusLifeVideos() {
                       className="absolute inset-0 h-full w-full border-0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
-                      loading="lazy"
+                      loading="eager"
                       referrerPolicy="strict-origin-when-cross-origin"
                     />
                   </div>
@@ -66,6 +68,7 @@ export function CampusLifeVideos() {
                     <div className="min-w-0">
                       <h3 className="truncate font-medium">{video.title}</h3>
                       <p className="text-sm text-muted-foreground">{video.source}</p>
+                      <a href={video.link} target="_blank" rel="noreferrer" className="mt-1 inline-block text-sm font-medium text-primary underline underline-offset-4">If the video doesn’t load, watch on {video.source}</a>
                     </div>
                   </div>
                 </div>
