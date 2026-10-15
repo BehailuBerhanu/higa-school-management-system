@@ -141,68 +141,6 @@ export default function CampusLifePage() {
         </div>
       </section>
 
-      <section className="border-b bg-muted/40 py-20 sm:py-24">
-        <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <Reveal className="flex flex-col gap-6">
-            <SectionHeading
-              eyebrow="The Boarding Day"
-              title="From rising bell to lights out"
-              description="The timetable below runs Monday to Friday. Saturdays carry a shortened academic morning; Sundays are for worship, rest, laundry and guardian calls."
-              align="left"
-            />
-            <div className="overflow-hidden rounded-2xl border">
-              <Image
-                src="/sun-rise.jpeg"
-                alt="A boarding house residence at Higa Model Boarding School in the early evening"
-                width={800}
-                height={600}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <Card>
-              <CardHeader>
-                <span className="mb-2 flex size-11 items-center justify-center rounded-xl bg-secondary/20 text-secondary-foreground">
-                  <ClockIcon className="size-5" aria-hidden />
-                </span>
-                <CardTitle>Weekday rhythm</CardTitle>
-                <CardDescription>
-                  Twelve fixed points that shape every boarder&apos;s day.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ol className="flex flex-col">
-                  {dayRhythm.map((slot, index) => (
-                    <li key={slot.time} className="flex flex-col">
-                      <div className="flex items-baseline gap-4 py-3">
-                        <span className="w-14 shrink-0 font-mono text-sm font-medium text-primary">
-                          {slot.time}
-                        </span>
-                        <div className="flex flex-col gap-0.5">
-                          <span className="text-sm font-medium">
-                            {slot.label}
-                          </span>
-                          <span className="text-sm text-muted-foreground">
-                            {slot.detail}
-                          </span>
-                        </div>
-                      </div>
-                      {index < dayRhythm.length - 1 ? <Separator /> : null}
-                    </li>
-                  ))}
-                </ol>
-              </CardContent>
-            </Card>
-          </Reveal>
-        </div>
-      </section>
-
-
-
-
-
       <section className="bg-primary py-20 text-primary-foreground sm:py-24">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-6 text-center">
           <Reveal className="flex flex-col items-center gap-6">
